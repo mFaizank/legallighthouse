@@ -1,0 +1,6 @@
+<p>Hello <%= @consultation_request.client_name %>,</p>
+<p><%= @consultation_request.lawyer_name %> has declined your request for a consultation.</p>
+<% if @reason %>
+  <p>The following reason was provided:</p>
+  <p>"<%= @reason %>"</p>
+<% end %>

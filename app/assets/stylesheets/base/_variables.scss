@@ -1,0 +1,52 @@
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+// Typography
+// $base-font-family: $helvetica;
+// $base-font-family: "Open Sans";
+$base-font-family: "Montserrat";
+$heading-font-family: $base-font-family;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$large-spacing: $base-spacing * 2;
+$base-z-index: 0;
+
+// Colors
+$white: #fff;
+$dark-gray: #333;
+$light-gray: #eee;
+$dark-blue: #061439;
+$blue: #162855;
+$light-blue: #4f618e;
+$green: #4a9470;
+
+// Font Colors
+$base-font-color: $dark-gray;
+// $action-color: #76b195;
+$action-color: $green;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: $white;
+$secondary-background-color: $light-gray;
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

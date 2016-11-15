@@ -1,0 +1,9 @@
+<p>Hello <%= @consultation_request.client_name %>,</p>
+<p><%= @consultation_request.lawyer_name %> has accepted your request for a consultation.</p>
+<p>The following time slots are available:<p>
+<ul>
+  <% @consultation_request.proposed_times.each do |proposed_time| %>
+    <li><%= proposed_time.time.to_formatted_s :long %></li>
+  <% end %>
+</ul>
+<p><%= link_to 'Select a time slot', confirm_consultation_url(@consultation_request) %></p>

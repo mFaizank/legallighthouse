@@ -1,0 +1,18 @@
+<h2>Accept consultation request</h2>
+
+<p>Choose 3 time slots</p>
+
+<%= simple_form_for(@consultation_request, url: accept_consultation_request_path(@consultation_request), method: :put) do |f| %>
+  <%= f.error_notification %>
+
+  <% count = 0 %>
+  <div class="form-inputs">
+    <%= f.simple_fields_for :proposed_times do |ff| %>
+      <%= ff.input :time, default: 1.hour.from_now, start_year: Date.today.year, minute_step: 15, label: "Time slot #{count += 1}" %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Accept" %>
+  </div>
+<% end %>

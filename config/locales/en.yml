@@ -1,0 +1,314 @@
+en:
+  date:
+    formats:
+      default:
+        "%m/%d/%Y"
+      with_weekday:
+        "%a %m/%d/%y"
+
+  time:
+    formats:
+      default:
+        "%a, %b %-d, %Y at %r"
+      date:
+        "%b %-d, %Y"
+      short:
+        "%B %d"
+
+  titles:
+    application: Legal Lighthouse
+
+  activerecord:
+    attributes:
+      contact:
+        name: Name
+        email: Email
+        subject: Subject
+        message: Message
+      application:
+        first_name: First name
+        last_name: Last name
+        phone_number: Phone number
+        email: Email
+      service:
+        case_specific: Case specific
+        starting_at: Starting at
+
+  errors:
+    messages:
+      invalid_phone: please enter a valid North American phone number
+
+  alerts:
+    contact: Thank you for your interest! We will be in contact soon.
+    invalid_email: The email you entered is invalid.
+    opening: Thank you for your interest! We will notify you once there is an opening.
+    contact_form: Thanks! We'll be in touch shortly.
+
+  specializations:
+    corporate: Corporate / Commercial Law
+    labor: Labour / Employment Law
+    intellectual: Intellectual Property Law
+    immigration: Immigration Law
+    civil: Civil Law
+    tax: Tax Law
+    realestate: Real Estate Law
+    other: Add other
+
+  bars:
+    barreau: Barreau du Québec
+    chambre: Chambre des notaires du Québec
+    upper: Law Sociey of Upper Canada
+    bc: Law Society of British Columbia
+    ab: Law Society of Alberta
+    sk: Law Society of Saskatchewan
+    mb: Law Society of Manitoba
+    nb: Law Society of New Brunswick
+    ns: Nova Scotia Barristers' Society
+    pe: Law Society of Prince Edward Island
+    nl: Law Society of Newfoundland and Labrador
+    yt: Law Society of Yukon
+    nt: Law Society of the Northwest Territories
+    nu: Law Society of Nunavut
+
+  lawyer_mailer:
+    application_email:
+      subject: Thank you for your interest in showcasing your services via the Legal Lighthouse platform
+      body: Your application is being reviewed in the order it was received. You will be contacted soon with a decision. If accepted, we will provide you with a link enabling you to complete your profile and start showcasing your services!
+    approval_email:
+      subject: Congratulations, you have been approved to create your account
+      body_1: We look forward to facilitating the client acquisition process, and generally making the practice of law simpler.
+      body_2_html: "Please click %{here} to complete your profile and begin showcasing your services. If there’s anything that we can do to help, please don’t hesitate to %{contact}."
+      body_2_text: "Please visit %{here_url} to complete your profile and begin showcasing your services. If there’s anything that we can do to help, please don’t hesitate to contact us at %{contact_url}."
+      body_here: here
+      body_contact: contact us
+    rejection_email:
+      subject: Thank you very much for your application
+      body_1: "Dear %{name},"
+      body_2: Thank you very much for your application. After careful review, we regret to inform you that we will not proceed with your application.
+      body_3: Legal Lighthouse receives many applications and we must balance supply of legal services with demand for them.  We have chosen, at this time, not to proceed with your application but encourage you to re-apply in the future should you feel that your credentials or experience have changed.
+      body_4: We wish you many successes in your practice of law.
+
+  application:
+    splash_header:
+      logo: logo_en.png
+      how: How it works
+      laywers: For lawyers
+      vision: Our vision
+      team: The team
+    splash_footer:
+      terms: Terms of Use
+      terms_path: /legal/terms_of_use
+      privacy: Privacy Policy
+      privacy_path: /legal/privacy_policy
+    lawyer_lead:
+      areas_application: Please enter your email address and up to five areas of practice in which you would offer fixed-fee services and we will notify you when the platform becomes available the your province(s) or territory that you selected.
+      areas_lawyers: Please enter up to five areas of practice in which you would offer fixed-fee services
+      area: Area of practice
+      email: Please enter your email
+      email_placeholder: Email
+      invite: Invite me!
+    privacy:
+      text: Legal Lighthouse Inc. takes your privacy extremely seriously and we never sell or provide third-party access to lists or email addresses.
+
+  layouts:
+    mailer:
+      sincerely: Sincerely,
+      legal_lighthouse: The Legal Lighthouse team
+
+  pages:
+    home:
+      title_html: "The Right Lawyer. <br>A Fair Price."
+      subtitle: Fixed-fee legal services, no hidden costs.
+      action: Solve your legal issues now!
+      packages: Examples of fixed fee packages and services
+      package_1:
+        title: Ready to be your own boss?
+        subtitle: Incorporate your business provincially
+        price: For as little as $950 + tax
+      package_2:
+        title: Going to small claims court?
+        subtitle: Make sure that you’re prepared
+        price: For as little as $600 + tax
+      package_3:
+        title: Starting an online business?
+        subtitle: Have your Terms of Service and Privacy Policy drafted
+        price: For as little as $1050 + tax
+      package_4:
+        title: Want to protect your brand?
+        subtitle: Put the odds in your favour and register a trademark today
+        price: For as little as $1000 + tax
+      featured: Examples of featured lawyers
+      profile_1:
+        title: Senior Attorney
+        experience: 11 years of experience
+      profile_2:
+        title: Senior Attorney
+        experience: 12 years of experience
+      profile_3:
+        title: Tax Lawyer
+        experience: 5 years of experience
+      profile_4:
+        title: Intellectual Property Attorney
+        experience: 7 years of experience
+      testimony:
+        text_html: "&ldquo;By facilitating access to fixed-fee legal services and allowing lawyers to work flexible hours, Legal Lighthouse is catalyzing a powerful and exciting shift in affordable access to justice.&rdquo;"
+        by: Richard Janda, Professor of Business Law, McGill University
+      interested: Interested in trying the service?
+      email: Legal Lighthouse is in the final phases of lawyer recruitment and will soon launch. Enter your email below to be notified when you can use the platform to find the right lawyer at the right price.
+      individual: I am an individual
+      business: I represent a business or an organization
+      email_placeholder: Email
+      notify: Notify me!
+
+    how_it_works:
+      section_1:
+        title: Connect easily with the right lawyer
+        items:
+          - Search for the right lawyer for your needs.
+          - Browse lawyer profiles and narrow your choices.
+          - Schedule a free evaluation of your legal needs.
+      section_2:
+        title: Hire a lawyer at a fair price
+        items:
+          - Pay a fair price with no hidden fees.
+          - Reduce legal fees through reduced overhead costs.
+      section_3:
+        title: Receive your legal solution quickly
+        items:
+          - Review and accept the lawyer's quote electronically.
+          - Accept the quote and get your lawyer to start work faster.
+          - Pay securely using your credit card.
+
+    lawyers:
+      title_html: "Showcase your services. <br>Attract new clients."
+      subtitle: Do law more efficiently, transparently, and get paid faster.
+      action: Grow your client base!
+      benefits: Benefits of our platform
+      section_1:
+        title_html: "Get paid faster, <br>increase client satisfaction"
+        items:
+          - Secure online payments, sent directly to your operations and/or trust account, ensure swift and reliable payment.
+          - "Fixed fee mandates increase:"
+        subitems:
+          - Client confidence that they are being charged fairly
+          - Predictability of cashflow
+          - Overall client satisfaction, which impacts retention rates and referrals
+      section_2:
+        title_html: "Faster and less expensive  <br>than the traditional approach"
+        subtitle_1: "Our digital approach and algorithms:"
+        items:
+          - Reduce the number of client interactions
+          - Reduce your overhead
+          - Decrease the overall time to completion
+        subtitle_2: all of which allow you to offer more attractive prices.
+      section_3:
+        title_html: "Work as much as you want, <br>from wherever you want"
+        items:
+          - Accept as many or as few clients as you wish, at the pricepoints you set
+          - Enjoy the freedom to work remotely
+          - Manage and receive payments from clients
+      sample: Sample profile
+      screenshot: screenshot_en.jpg
+      interested: Interested in joining us?
+      recruitment: Legal Lighthouse is in the final phases of lawyer recruitment.
+      create: To create a profile showcasing your experience, fixed-fee service rates, and hourly consultation rate, please enter the following information. We will contact you with our Terms and Conditions and an invitation to apply when previous applicants have been reviewed.
+      apply: Apply now
+
+    team:
+      advisory_board:
+        title: Advisory Board
+        hinton:
+          title: Director, Special projects
+          bio_html: "<a href=\"https://www.linkedin.com/in/deborahhinton\">Hinto and co.</a>"
+        janda:
+          title_html: Professor of Business Law
+          bio_html: "<a href=\"https://www.mcgill.ca/law/about/profs/janda-richard\">McGill University</a>"
+        blundon:
+          title: Account Executive
+          bio_html: "<a href=\"https://ca.linkedin.com/in/michaelblundon\">LinkedIn</a>"
+        reynaud:
+          title: Tax Lawyer
+          bio_html: "<a href=\"https://ca.linkedin.com/in/patrick-reynaud-594b7165\">Torys LLP</a>"
+      founders: Legal Lighthouse Founders
+      danielle:
+        title: President
+        bio_html: "<a href=\"https://ca.linkedin.com/in/danielle-linnen-2574861b\">Danielle</a> is a bilingual lawyer who has championed legal issues related to the environment, social justice and aboriginal rights. She has worked at the United Nation’s Convention on Biological Diversity (CBD) and has practiced aboriginal, corporate, commercial, and constitutional law for four years. Danielle holds a Juris Doctorate Degree, a Bachelor of Law, and an Honour’s Bachelor Degree in International Development and Environmental Studies."
+      jameson:
+        title: VP Product Development
+        bio_html: "<a href=\"http://ca.linkedin.com/in/jamesonjonesdoyle\">Jameson</a> is an experienced social enterprise coach with expertise in startup-related strategic innovation and financial management. He has worked for the Center for International Sustainable Development Law (CISDL), the CBD, McGill University, and has managed the development of several startups and not-for-profits. He holds a Masters in Marketing and a B.A in Psychology, and while in graduate school he was named as Concordia’s Outstanding Student of the Year as well as one of Quebec’s top three graduate personalities."
+      mike:
+        title: VP Engineering
+        bio_html: "<a href=\"https://ca.linkedin.com/in/mikhail-chliakhovski-6a9b9b65\">Mike</a> is a full-stack software engineer with extensive experience in web application and iOS development, and is dedicated to using technology in the service of the greater good. He has worked for TPS Software, the CISDL, the Canadian Centre for International Justice, and is currently employed as a Senior Software Engineer in Emerging Brands at Match Group. He holds a Bachelor of Computer Science, with distinction, from Concordia University."
+
+    vision:
+      text_html: |
+        <h3>What is legal lighthouse’s mission?</h3>
+        <p>Hiring a lawyer can be stressful, especially when you don’t know how much it’s actually going to cost.</p>
+        <p>Imagine going to a restaurant that you know has a reputation for being expensive and when you arrive, there are no clear prices next to the menu items. Would it be safe to say that being unable to predict the cost of your night might affect the enjoyment of your meal? Even if the food and service were excellent, the financial surprise at the end of the night could make your chances of returning slim. We wouldn’t like this to happen at a restaurant, and studies in law have shown that clients don't like this either. Legal Lighthouse’s mission is to connect people with lawyers who are transparent about the services that they offer and how much each service costs. No more surprises.</p>
+        <h3>When to use our services?</h3>
+        <p>Let’s face it, there are certain problems that require legal solutions.</p>
+        <p>We have all heard stories of people needing a lawyer in reaction to being wrongfully terminated from their job or losing custody over their children. There are also times when lawyers are needed to prevent future problems, such as by startups who need a solid legal structure, by businesses who need an employment contract reviewed, by common law couples who need a spousal agreement, etc. Although people facing these situations could clearly benefit from legal solutions, they often don’t hire lawyers because they are afraid of being overcharged. Legal Lighthouse aims to address this fear by creating a platform to give everyone access to the right lawyer at a fair price.</p>
+        <h3>Who are the lawyers?</h3>
+        <p>You might wonder why lawyers would want to use this platform - what’s in it for them?</p>
+        <p>While it’s a common myth that all lawyers are rich, in reality, practicing law is very costly. By working with clients through Legal Lighthouse, lawyers decrease many of the traditional costs of practicing law (like renting expensive downtown offices). By reducing their costs, they can offer more affordable prices to customers like you!</p>
+      statement: Life can be stressful, but at Legal Lighthouse we believe that benefiting from quality legal solutions shouldn’t have to be. Welcome to our platform; we hope that you enjoy your experience!
+
+  applications:
+    new:
+      title: Application
+      law_society: In which Law Society/Bar are you an active member?
+      other_bars: Legal Lighthouse is currently only operating in Quebec. Please fill in the required information below to submit your application for Quebec and Legal Lighthouse will notify you when operations expand to the other provinces you selected.
+      bar_info: Legal Lighthouse requires your bar number to verify your standing with the Quebec Bar Association ("Barreau du Québec").  It will not be publicly displayed and will be kept confidential as per our Terms of Service and Privacy Policy.
+      no_qc: Please enter your email address and up to five areas of practice in which you would offer fixed-fee services and we will notify you when the platform becomes available the your province(s) or territory that you selected.
+      bar_number: Quebec Bar number (e.g. 1234567)
+      year_of_call: Year of call to the Quebec Bar
+      firm_name: Firm name
+      areas: In which area(s) of law do you practice?
+      languages: "Please the list the languages that you are able to provide services in:"
+      remove: Remove
+      add: Add
+      good_standing: Are you a member in good standing of the Quebec Bar?
+      malpractice: Do you carry valid professional liability insurance?
+      credentials: Do you have any other relevant credentials that you would like to tell us about?
+      cv: Please upload a CV or biography
+      agree: "Do you agree to the following:"
+      values:
+        - To offer transparent services and explain invoicing to clients when necessary
+        - To use simple language that is understandable to clients when communicating
+        - To offer confidential services in compliance with all of the Quebec Law Society's Deontological requirements
+        - To offer fair prices, reflective of your experience and the money saved through the use of our platform
+        - To undergo, if necessary, a phone interview from one of our Legal Lighthouse representatives
+      check_here: Check here to indicate that you have read and agree to our Terms of Use and Privacy Policy
+      next: Next
+      previous: Previous
+      apply: Apply
+    create:
+      thank_you: Thank you for applying! You will receive a confirmation email shortly.
+
+  lawyers:
+    show:
+      evaluation: Schedule a free evaluation now
+      experience: "%{years} years of experience"
+      bio: Bio
+      consulation: One hour consultation
+
+  leads:
+    create:
+      success: Thank you for your interest! We will be in contact soon.
+      failure: The email you entered is invalid.
+
+  lawyer_leads:
+    create:
+      success: Thank you for your interest! We will notify you once there is an opening.
+      failure: The email you entered is invalid.
+
+  consultation_requests:
+    new:
+      title: Senior Attorney
+      location: Montreal, Quebec
+      experience: 11 years of experience
+
+  contacts:
+    new:
+      title: Contact us
+      submit: Submit

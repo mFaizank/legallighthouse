@@ -1,0 +1,20 @@
+<h2>Clients</h2>
+
+<p><strong>Total:</strong> <%= @count %><p>
+
+<table>
+  <% unless @users.empty? %>
+    <tr>
+      <th>Signed up</th>
+      <th>Name</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.created_at.to_date.to_formatted_s(:long) %></td>
+        <td><%= user.private_name %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <p>No clients</p>
+  <% end %>
+</table>

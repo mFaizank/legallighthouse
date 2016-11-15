@@ -1,0 +1,15 @@
+<%= form_tag(lawyer_leads_path) do %>
+  <label><%= t ".areas_#{page}" %></label>
+  <div class="areas">
+    <input type="text" name="practices[0]" placeholder="<%= t '.area' %>">
+    <input type="text" name="practices[1]" placeholder="<%= t '.area' %>">
+    <input type="text" name="practices[2]" placeholder="<%= t '.area' %>">
+    <input type="text" name="practices[3]" placeholder="<%= t '.area' %>">
+    <input type="text" name="practices[4]" placeholder="<%= t '.area' %>">
+  </div>
+  <label><%= t '.email' %></label>
+  <div class="email">
+    <input type="email" name="email" placeholder="<%= t '.email_placeholder' %>">
+    <button type="submit"><%= t '.invite' %></button>
+  </div>
+<% end %>

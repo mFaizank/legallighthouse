@@ -1,0 +1,65 @@
+<% content_for :home do %>
+  <%= render "flashes" %>
+  <div class="splash">
+    <%= render 'splash_header' %>
+    <div class="call-to-action">
+      <div class="splash-slogan"><%= t '.title_html' %></div>
+      <div class="splash-sub"><%= t '.subtitle' %></div>
+      <%= application_form_button(t('.action')) %>
+    </div>
+    <div class="details">
+      <h2><%= t '.benefits' %></h2>
+      <div class="details-container">
+        <div class="row">
+          <div><%= image_tag 'paid.jpg' %></div>
+          <div>
+            <h3><%= t '.section_1.title_html' %></h3>
+            <ul>
+              <% t('.section_1.items').each do |item| %>
+                <li><%= item %></li>
+              <% end %>
+              <ul>
+                <% t('.section_1.subitems').each do |item| %>
+                  <li><%= item %></li>
+                <% end %>
+              </ul>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mobile"><%= image_tag 'laptop.jpg' %></div>
+          <div>
+            <h3><%= t '.section_2.title_html' %></h3>
+            <p><%= t '.section_2.subtitle_1' %></p>
+            <ul>
+              <% t('.section_2.items').each do |item| %>
+                <li><%= item %></li>
+              <% end %>
+            </ul>
+            <p><%= t '.section_2.subtitle_2' %></p>
+          </div>
+          <div class="desktop"><%= image_tag 'laptop.jpg' %></div>
+        </div>
+        <div class="row">
+          <div><%= image_tag 'mountains.jpg' %></div>
+          <div>
+            <h3><%= t '.section_3.title_html' %></h3>
+            <ul>
+              <% t('.section_3.items').each do |item| %>
+                <li><%= item %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="screenshot">
+      <h2><%= t '.sample' %></h2>
+      <%= image_tag t('.screenshot') %>
+    </div>
+    <div class="call-to-action bottom">
+      <%= application_form_button(t('.apply')) %>
+    </div>
+    <%= render 'splash_footer' %>
+  </div>
+<% end %>

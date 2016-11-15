@@ -1,0 +1,4 @@
+<p>Hello <%= @lawyer.public_name %>,</p>
+<p>You have received an consultation request with the following description:</p>
+<p>"<%= @consultation_request.description %>"</p>
+<p><%= link_to 'Review the consultation request', consultation_request_url(@consultation_request) %></p>

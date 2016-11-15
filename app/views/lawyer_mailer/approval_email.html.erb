@@ -1,0 +1,2 @@
+<p><%= t '.body_1' %></p>
+<p><%= t '.body_2_html', here: link_to(t('.body_here'), "#{@domain}#{new_lawyer_registration_path(token: @application.token)}"), contact: link_to(t('.body_contact'), "#{@domain}#{contact_path}") %></p>

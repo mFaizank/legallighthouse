@@ -1,0 +1,1225 @@
+@charset "utf-8";
+
+@import "normalize-rails";
+@import "bourbon";
+@import "base/grid-settings";
+@import "neat";
+@import "base/base";
+@import "refills/flashes";
+
+$nav-height: 60px;
+$nav-padding: 10px;
+
+body {
+  background-color: $secondary-background-color;
+  font-feature-settings: normal;
+}
+
+header {
+  width: 100%;
+  height: $nav-height;
+  background-color: $blue;
+  font-size: 14px;
+  padding: 0 $nav-padding;
+
+  &.admin  {
+    background-color: #000;
+  }
+
+  a {
+    color: $white;
+    line-height: $nav-height;
+    margin: 0 $nav-padding;
+    float: right;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: shade($white, 25%);
+    }
+
+    &.logo {
+      float: left;
+      margin: 0;
+
+      img {
+        height: $nav-height;
+      }
+    }
+  }
+}
+
+.content {
+  padding: 20px;
+  background-color: $base-background-color;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  margin-right: 20%;
+}
+
+.form-inputs {
+  width: 80%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.items .form-inputs {
+  max-width: 80%;
+  margin: 0;
+}
+
+.error {
+  color: red;
+}
+
+.form-actions {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.input {
+  margin-bottom: 30px;
+}
+
+span label {
+  font-weight: normal;
+}
+
+.checkbox {
+  margin: 15px 0;
+}
+
+.values {
+  list-style-type: lower-latin;
+  margin-left: 30px;
+
+  li {
+    margin: 10px 0;
+  }
+}
+
+.error {
+  color: red;
+}
+
+.pending {
+  background-color: $notice-color;
+}
+
+.cancelled {
+  background-color: $secondary-background-color;
+}
+
+.accepted {
+  background-color: $success-color;
+}
+
+.rejected {
+  background-color: $error-color;
+}
+
+select.datetime {
+  display: inline;
+}
+
+footer {
+  font-size: 12px;
+  width: 100%;
+  height: $nav-height;
+  background-color: $secondary-background-color;
+  line-height: $nav-height;
+  padding: 0 10px 0 20px;
+
+  a {
+    color: $dark-gray;
+    line-height: $nav-height;
+    margin: 0 $nav-padding;
+    float: left;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: tint($dark-gray, 25%);
+    }
+  }
+}
+
+.mandate {
+  max-width: 60%;
+  margin: auto;
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  ol {
+    margin-left: 40px;
+    list-style-type: upper-roman;
+
+    ol {
+      list-style-type: lower-roman;
+    }
+  }
+
+  form {
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+
+.user_name, .user_title {
+  display: none;
+}
+
+.inbox-time {
+  color: #999;
+}
+
+.invoice {
+  tr:nth-child(even) {
+    background-color: $secondary-background-color;
+  }
+  td {
+    border: none;
+  }
+
+  form {
+    text-align: right;
+    padding-top: 20px;
+  }
+}
+
+.container {
+  @include outer-container;
+
+  .navigation {
+    @include span-columns(3);
+
+    li {
+      margin: 5px 0;
+    }
+  }
+
+  .items {
+    @include span-columns(9);
+
+    table {
+      margin-top: 0;
+    }
+  }
+}
+
+.profile {
+  color: $white;
+  background-color: $blue;
+  border-top: 1px solid $light-blue;
+  padding: 20px 60px;
+
+  &:after {
+     content: " ";
+     display: block;
+     height: 0;
+     clear: both;
+  }
+
+  .name {
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .location {
+    font-size: 14px;
+
+    img {
+      height: 25px;
+      float: left;
+      margin: -2px 2px 0 -4px;
+      opacity: 0.3;
+    }
+
+    p {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+
+  form {
+    float: right;
+    margin-top: 50px;
+  }
+
+  input {
+    padding: 0.75em 2em;
+  }
+}
+
+.avatar {
+  width: 200px;
+  border: 10px  solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  margin: 0 40px -60px 0;
+  float: left;
+}
+
+.bio {
+  margin-left: 290px;
+  line-height: 1.8;
+
+  td {
+    vertical-align: top;
+  }
+
+  input[type=submit] {
+    font-size: 14px;
+    padding: 0.5em 1em;
+    // min-width: 115px;
+  }
+}
+
+.short {
+  padding: 0 20px;
+}
+
+.long {
+  display: none;
+}
+
+.services {
+  // margin: 0.75em 0;
+}
+
+.accordion-tabs-minimal {
+  $base-border-color: #dcdcdc !default;
+  $base-background-color: #fff !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477dca !default;
+  $dark-gray: #333 !default;
+  $medium-screen: 40em !default;
+  $tab-link-color: $dark-gray;
+  $tab-border: 1px solid $base-border-color;
+  $tab-active-background: $base-background-color;
+  $tab-inactive-color: $base-background-color;
+  $tab-inactive-hover-color: #c0c0c0;
+  $tab-mode: $medium-screen;
+
+  @include clearfix;
+  line-height: 1.5;
+  padding: 0;
+  padding-top: 0.25em;
+
+  .tab-header-and-content {
+    list-style: none;
+
+    @include media($tab-mode) {
+      display: inline;
+    }
+  }
+
+  .tab-link {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: $tab-link-color;
+    display: block;
+    padding: ($base-spacing / 2) $gutter;
+    text-decoration: none;
+
+    @include media($tab-mode) {
+      border-top: 0;
+      display: inline-block;
+    }
+
+    &:hover {
+      color: $action-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.is-active {
+      border-bottom: 0;
+
+      @include media($tab-mode) {
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .tab-content {
+    display: none;
+    padding: $base-spacing $gutter;
+    width: 100%;
+
+    @include media($tab-mode) {
+      border-top: $tab-border;
+      float: left;
+    }
+  }
+}
+
+.consultation {
+  color: $white;
+  background-color: $blue;
+
+  td {
+    border: none;
+  }
+
+  strong {
+    margin-left: 20px;
+  }
+
+  input[type=submit] {
+    margin-right: 20px;
+  }
+}
+
+.splash {
+  background-color: $blue;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include media(1021px) {
+    background-image: image-url('bg_1020plus.jpg');
+  }
+
+  @include media(min-width 841px max-width 1020px) {
+    background-image: image-url('bg_1020.jpg');
+  }
+
+  @include media(min-width 661px max-width 840px) {
+    background-image: image-url('bg_840.jpg');
+  }
+
+  @include media(min-width 481px max-width 660px) {
+    background-image: image-url('bg_660.jpg');
+  }
+
+  @include media(min-width 320px max-width 480px) {
+    background-image: image-url('bg_480.jpg');
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  input {
+    margin-bottom: 140px;
+  }
+}
+
+.splash {
+  &.vision, &.team, &.how {
+    background-image: none;
+  }
+}
+
+.language {
+  float: right;
+}
+
+.splash-header {
+  text-align: center;
+}
+
+.splash-nav {
+  @include outer-container(48em);
+
+  a {
+    @include media(661px, 10) {
+      @include span-columns(2);
+
+      &.current {
+        border-bottom: 2px solid #fff;
+      }
+
+      &.logo.mobile {
+        display: none;
+      }
+    }
+
+    @include media(min-width 320px max-width 660px) {
+      @include span-columns(6);
+      @include omega();
+
+      &.current {
+        text-decoration: underline;
+      }
+
+      &.logo {
+        &.mobile {
+          @include span-columns(12);
+          display: block;
+          margin-bottom: -20px;
+        }
+
+        &.desktop {
+          display: none;
+        }
+      }
+    }
+
+    color: $white;
+    text-transform: uppercase;
+    padding: 25px 0 8px 0;
+    margin-bottom: 15px;
+    font-size: 12px;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: shade($white, 25%);
+    }
+
+    &.logo {
+      line-height: 60px;
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    height: 100px;
+    margin-top: 10px;
+  }
+}
+
+.call-to-action {
+  @include outer-container(58em);
+  color: $white;
+  text-align: center;
+
+  &.bottom {
+    max-width: 100%;
+    background-color: $light-gray;
+
+    input {
+      margin: 80px 0;
+    }
+  }
+
+  input[type=submit] {
+    padding: 0.75em 1.5em;
+    height: 40px;
+  }
+
+  @include media(661px) {
+    .splash-slogan {
+      font-size: 36px;
+      margin-bottom: 15px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  @include media(min-width 320px max-width 660px) {
+    .splash-slogan {
+      font-size: 24px;
+      margin: 30px 0 15px 0;
+    }
+  }
+}
+
+.splash-sub {
+  padding: 0 30px;
+  margin-bottom: 80px;
+}
+
+.team_title {
+  color: $white;
+  background-color: $light-blue;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.founder_spacing {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: $white;
+}
+.testimony {
+  color: $white;
+  background-color: $light-blue;
+
+  div {
+    text-align: right;
+    font-size: 18px;
+    padding-top: 10px;
+  }
+
+  @include media(761px) {
+    padding: 30px 15%;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  @include media(min-width 481px max-width 760px) {
+    padding: 30px 10%;
+    font-size: 22px;
+    line-height: 32px;
+
+    div {
+      font-size: 16px;
+    }
+  }
+
+  @include media(min-width 320px max-width 480px, 6) {
+    padding: 30px 10%;
+    font-size: 18px;
+    line-height: 26px;
+
+    div {
+      font-size: 14px;
+    }
+  }
+}
+
+.examples {
+  padding: 30px 0 20px 0;
+  font-size: 14px;
+  background-color: $light-gray;
+  color: $dark-gray;
+
+  @include media(min-width 320px max-width 480px, 6) {
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+  p {
+    margin: 0 0 10px 0;
+  }
+}
+
+.examples-container {
+  @include outer-container;
+
+  .row {
+    @include row();
+
+    div {
+      @include media(761px) {
+        @include span-columns(6);
+        @include pad(0 20px 20px 20px);
+
+        p:first-child {
+          font-size: 22px;
+        }
+      }
+
+      @include media(min-width 481px max-width 760px) {
+        @include span-columns(6);
+        @include pad(0 0 20px 0);
+
+        p:first-child {
+          font-size: 18px;
+        }
+      }
+
+      @include media(min-width 320px max-width 480px, 6) {
+        @include span-columns(6);
+        @include pad(0 20px 20px 20px);
+      }
+
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+
+  p:first-child {
+    color: white;
+    padding: 10px;
+    background: #4f618e;
+  }
+
+  p:nth-child(2) {
+    font-size: 16px;
+  }
+
+  p:last-child {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.featured {
+  background-color: $white;
+  color: $dark-gray;
+  padding: 30px;
+}
+
+.featured-container {
+  @include outer-container(58em);
+
+  div {
+    @include media(761px) {
+      @include span-columns(3);
+    }
+
+    @include media(min-width 481px max-width 760px, 6) {
+      @include span-columns(3);
+      @include omega(2n);
+      @include pad(0 0 30px 0);
+    }
+
+    @include media(min-width 320px max-width 480px, 3) {
+      @include span-columns(3);
+      @include pad(0 0 30px 0);
+    }
+
+    text-align: center;
+  }
+
+
+  img {
+    width: 150px;
+    border-radius: 100px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+}
+
+.examples h2, .featured h2 {
+  text-align: center;
+  font-weight: normal;
+  text-indent: 0;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.action {
+  @include outer-container(100%);
+  background-color: $light-gray;
+  color: $dark-gray;
+  padding: 30px 0;
+
+  form {
+    margin-top: 30px;
+  }
+
+  label {
+    margin: 30px 0 20px 0;
+  }
+}
+
+.action-container {
+  margin: auto;
+  max-width: 700px;
+
+  @include media(761px) {
+    width: 75%;
+  }
+
+  @include media(min-width 481px max-width 760px) {
+    width: 85%;
+  }
+
+  @include media(min-width 320px max-width 480px) {
+    width: 90%;
+
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+  background-color: $white;
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-right: 20px;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+}
+
+.areas {
+  @include outer-container(100%);
+
+  input {
+    @include media(761px) {
+      @include span-columns(10);
+    }
+
+    @include media(min-width 320px max-width 760px) {
+      @include span-columns(12);
+    }
+  }
+}
+
+.action-container .email {
+  @include outer-container(100%);
+
+  &.home {
+    padding-top: 30px;
+  }
+
+  input, button {
+    height: 40px;
+
+    @include media(761px) {
+      @include span-columns(5);
+    }
+
+    @include media(min-width 481px max-width 760px) {
+      @include span-columns(6);
+    }
+
+    @include media(min-width 320px max-width 480px, 6) {
+      @include span-columns(6);
+    }
+  }
+
+  button {
+    padding: 0;
+  }
+}
+
+.team-container {
+  @include outer-container(100%);
+  color: $dark-gray;
+  background-color: $white;
+  padding: 30px 5%;
+
+  .row {
+    @include row();
+    margin-bottom: 20px;
+
+    &:nth-child(even) {
+      margin-bottom: 40px;
+    }
+
+    @include media(481px) {
+      div {
+        @include pad(0 5% 0 0);
+      }
+
+      div:first-child {
+        @include span-columns(4);
+      }
+
+      div:last-child {
+        @include span-columns(8);
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    @include media(min-width 320px max-width 480px) {
+      text-align: center;
+
+      div {
+        @include span-columns(12);
+      }
+
+      p {
+        text-align: left;
+      }
+
+      h3, .title {
+        display: inline;
+      }
+
+      img {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.vision {
+  h3 {
+    text-transform: uppercase;
+    margin: 3em 0 1.5em 0;
+
+    &:first-child {
+      margin: 1.5em 0;
+    }
+  }
+}
+
+.vision-text {
+  @include media(481px) {
+    padding: 20px 15% 20px 5%;
+  }
+
+  @include media(min-width 320px max-width 480px) {
+    padding: 20px 5% 20px 5%;
+  }
+
+  color: $dark-gray;
+  background-color: $white;
+
+  p {
+    margin-right: 0;
+    max-width: 660px;
+    text-align: justify;
+  }
+}
+
+.details {
+  background-color: $white;
+  color: $dark-gray;
+
+  @include media(481px) {
+    padding: 0 5% 20px 5%;
+  }
+
+  @include media(min-width 320px max-width 480px) {
+    padding: 0 0 20px 0;
+  }
+
+  h2 {
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  p {
+    margin-left: 20px;
+  }
+
+  &.how {
+    background-color: $white;
+    padding-bottom: 0;
+
+    .row {
+      margin-bottom: 0;
+
+      // hack
+      &:nth-child(2) img {
+        // margin-top: -20px;
+      }
+    }
+
+    .details-container {
+      padding: 20px 5% 0 5%;
+
+      .row {
+        padding: 0;
+      }
+
+      div {
+        padding: 20px;
+      }
+    }
+
+    img {
+      max-height: 100%;
+      margin: auto;
+      display: block;
+    }
+  }
+}
+
+.details-container {
+  @include outer-container;
+
+  .row {
+    @include row();
+    margin-bottom: 30px;
+
+    div {
+      @include media(661px) {
+        @include span-columns(6);
+
+        &.mobile {
+          display: none;
+        }
+      }
+
+      @include media(min-width 481px max-width 660px) {
+        padding: 0 30px;
+      }
+
+      @include media(min-width 320px max-width 660px, 6) {
+        @include span-columns(6);
+
+        &.desktop {
+          display: none;
+        }
+
+        img {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-bottom: 0.75em;
+    text-indent: -1em;
+    padding-left: 1em;
+
+    li {
+      padding-left: 5px;
+    }
+
+    ul li {
+      margin-left: 20px;
+    }
+  }
+
+  p {
+    margin-right: 0;
+  }
+}
+
+.screenshot {
+  text-align: center;
+  color: $dark-gray;
+  background-color: $white;
+  padding-bottom: 30px;
+
+  h2 {
+    padding: 30px 0;
+  }
+
+  img {
+    max-width: 2000px;
+    border-bottom: 10px solid $white;
+
+    @include media(661px) {
+      width: 90%;
+    }
+
+    @include media(min-width 320px max-width 660px) {
+      width: 100%;
+    }
+  }
+}
+
+.privacy  {
+  @include media(761px) {
+    @include span-columns(6);
+    @include shift(3);
+  }
+
+  @include media(min-width 481px max-width 760px) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+
+  @include media(min-width 320px max-width 480px) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+
+  color: $dark-gray;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 20px;
+  opacity: 0.6;
+}
+
+.flashes div {
+  margin-bottom: 0;
+}
+
+.form-inputs p {
+  margin-right: 0;
+}
+
+.info-box {
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+
+  &.notice {
+    background-color: $notice-color;
+  }
+
+  &.alert {
+    background-color: $alert-color;
+  }
+}
+
+.new_application {
+  section:last-child, .previous, .apply {
+    display: none;
+  }
+
+  .apply {
+    margin-left: 10px;
+  }
+}
+
+.checkboxes {
+  margin-bottom: 20px;
+}
+
+.other-bars {
+  display: none;
+}
+
+.no-qc {
+  display: none;
+
+  .action {
+    background-color: $white;
+    padding: 0;
+  }
+
+  .action-container {
+    padding-top: 0;
+  }
+
+  form {
+    margin-top: 0;
+  }
+}
+
+label.required::after {
+  color: red;
+}
+
+.add-specialization, .languages, .add-language {
+  display: none;
+}
+
+#languages_select {
+  float: left;
+  margin: 0;
+}
+
+.remove-language {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.add-language {
+  margin-top: 10px;
+}
+
+$menu-background-color: $light-blue;
+
+.drop-down {
+  display: none;
+  background-color: $menu-background-color;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  // width: 150px;
+  padding-bottom: 10px;
+
+  a {
+    float: none;
+    display: block;
+    border-bottom: 1px solid $blue;
+    line-height: 40px;
+    margin: 0 20px;
+
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+.profile-link {
+  color: #fff;
+  line-height: 60px;
+  padding: 0 10px;
+  margin-right: -10px;
+  float: right;
+  cursor: pointer;
+
+  &.hover {
+    background-color: $menu-background-color;
+  }
+
+  img {
+    height: 24px;
+    vertical-align: middle;
+    margin: 0 5px;
+    border-radius: 12px;
+  }
+}
+
+.avatar.edit {
+  margin: 0;
+}
+
+.simple_form.edit_lawyer h3 {
+  background-color: $light-gray;
+  padding: 10px;
+}
+
+#lawyer_bio {
+  height: 250px;
+}
+
+.contact-form {
+  background-color: $white;
+  padding-bottom: 30px;
+
+  h2 {
+    padding: 30px;
+  }
+
+  input {
+    margin-bottom: 0.75em;
+  }
+
+  .form-inputs {
+    min-width: 320px;
+  }
+
+  .form-actions {
+    margin: 0;
+  }
+
+  .error_notification {
+    margin: 0 0 20px 30px;
+  }
+}

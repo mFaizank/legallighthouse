@@ -1,0 +1,15 @@
+<h2>Confirm consultation</h2>
+
+<p><%= @consultation.lawyer_name %> has proposed the three following times to connect for your free 30 minute consultation.  Please select the most convenient time:</p>
+
+<%= simple_form_for(@consultation, url: confirm_consultation_path(@consultation), method: :put) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.collection_radio_buttons :time, @consultation.time_options, :first, :last %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Confirm" %>
+  </div>
+<% end %>

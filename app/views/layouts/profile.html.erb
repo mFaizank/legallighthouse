@@ -1,0 +1,22 @@
+<% content_for :content do %>
+  <div class="container">
+    <h2>Edit profile</h2>
+    <ul class="navigation">
+      <li><%= link_to_unless_current 'About me', edit_profile_path %></li>
+      <li><%= link_to_unless_current 'Services', services_path %></li>
+      <hr>
+      <% if @lawyer.profile.complete? %>
+        <% if @lawyer.listed? %>
+          <p>Your public profile is listed. <%= link_to 'Unlist', unlist_profile_path %></p>
+        <% else %>
+          <p>Your public profile is unlisted. <%= link_to 'List', list_profile_path %></p>
+        <% end %>
+        <p><%= link_to 'Preview', preview_profile_path, target: '_blank' %> profile.</p>
+      <% else %>
+        <p>You must complete your profile before it can be listed.</p>
+      <% end %>
+    </ul>
+    <div class="items"><%= yield %></div>
+  </div>
+<% end %>
+<%= render template: "layouts/application" %>

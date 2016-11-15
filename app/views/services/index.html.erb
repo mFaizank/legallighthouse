@@ -1,0 +1,51 @@
+<p><%= link_to 'Edit areas of law', new_area_path %></p>
+
+<ul class="accordion-tabs-minimal">
+  <% @areas.each do |area| %>
+    <li class="tab-header-and-content">
+      <a href="#" class="tab-link"><%= area.name.capitalize %></a>
+      <div class="tab-content">
+        <table>
+          <% @lawyer.services.where(specialization: area.name).each do |service| %>
+            <colgroup>
+              <col width="20%">
+              <col width="60%">
+              <col width="40%">
+              <col width="10%">
+            </colgroup>
+            <tr>
+              <td><strong class="service"><%= service.name %></strong></td>
+              <td>
+                <div class="short">
+                  <%= truncate(service.description, length: 100, separator: ' ' ) do %>
+                    <%= link_to 'More', '#', class: 'more' %>
+                  <% end %>
+                </div>
+                <div class="long">
+                  <%= "#{service.description} " %>
+                  <%= link_to 'Less', '#', class: 'more' %>
+                </div>
+              </td>
+              <td>
+                <% if service.fixed_fee %>
+                  <% if service.starting_at %>
+                    Starting at<br><%= format_price(service.fixed_fee) %>
+                  <% else %>
+                    <%= format_price(service.fixed_fee) %>
+                  <% end %>
+                <% elsif service.case_specific %>
+                  Case specific
+                <% end %>
+              </td>
+              <td>
+                <%= link_to 'Edit', edit_service_path(service) %>
+                <%= link_to 'Delete', service_path(service), method: :delete %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+        <p><%= link_to 'Add service', new_service_path(area) %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>

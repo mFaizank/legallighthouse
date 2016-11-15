@@ -1,0 +1,26 @@
+<% unless @consultations.empty? && @undecided_consultations.empty? %>
+  <table>
+    <% @consultations.each do |consultation| %>
+      <tr>
+        <td class="inbox-time"><%= inbox_time(consultation.created_at) %></td>
+        <td><%= "Booked consultation with #{consultation.client_name} on #{consultation.human_time}" %></td>
+        <% unless consultation.user.has_quote_from?(consultation.lawyer) %>
+          <td><%= link_to 'Send quote', new_quote_path(consultation.user) %>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+
+  <h3>To be scheduled by phone<h3>
+
+  <table>
+    <% @undecided_consultations.each do |consultation| %>
+      <tr>
+        <td class="inbox-time"><%= inbox_time(consultation.created_at) %></td>
+        <td><%= "Contact #{consultation.client_name} at #{number_to_phone(consultation.user.phone_number, area_code: true)}" %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>No consultations</p>
+<% end %>

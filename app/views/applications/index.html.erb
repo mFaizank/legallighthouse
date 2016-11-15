@@ -1,0 +1,33 @@
+<h2>Applications</h2>
+
+<p><strong>Total applied:</strong> <%= @applied_count %><p>
+<p><strong>Total approved:</strong> <%= @approved_count %><p>
+<p><strong>Total rejected:</strong> <%= @rejected_count %><p>
+<p><strong>Total pending:</strong> <%= @pending_count %><p>
+
+<table>
+  <% unless @applications.empty? %>
+    <tr>
+      <th>Applied</th>
+      <th>Name</th>
+      <th>Year of call</th>
+      <th>Status</th>
+      <th>Locale<th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @applications.each do |application| %>
+      <tr>
+        <td><%= application.created_at.to_date.to_formatted_s(:long) %></td>
+        <td><%= application.full_name %></td>
+        <td><%= application.year_of_call %></td>
+        <td><%= application.status %></td>
+        <td><%= application.locale %></td>
+        <td><%= link_to 'Details', application_path(application) %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <p>No applications</p>
+  <% end %>
+</table>

@@ -1,0 +1,13 @@
+<h2>Consultation request</h2>
+
+<p><strong>Client:</strong> <%= @consultation_request.client_name %></p>
+<p><strong>Type:</strong> <%= @consultation_request.type %></p>
+<p>
+  <strong>Description:</strong><br>
+  <%= @consultation_request.description %>
+</p>
+
+<p><%= link_to 'Accept', accept_consultation_request_path(@consultation_request) %></p>
+<p><%= link_to 'Decline', decline_consultation_request_path(@consultation_request) %></p>
+
+<p><%= link_to 'Back to inbox', lawyer_consultation_requests_path %></p>

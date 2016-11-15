@@ -1,0 +1,66 @@
+<h2>Lawyer Payment history</h2>
+
+<h3>Technology Fee Paid</h3>
+
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Date of Payment</th>
+            <th>View receipt</th>
+        </tr>
+    </thead>
+    <tbody>
+      <%unless @technology_fees.blank?%>
+        <% @technology_fees.each do |fee| %>
+          <tr>
+            <td>
+               <%= fee.amount %>
+            </td>
+            <td>
+               Technology fee for the use of Lighthouse platform 
+            </td>
+            <td>
+              <%= fee.created_at.strftime('%B %e, %y at %l:%M %p') %>
+            </td>
+            <td>
+              <%=link_to "Receipt", quote_payment_path(fee.quote_id, fee.id) %>
+            </td>
+          </tr>
+        <%end%>
+      <%end%>
+    </tbody>
+</table>
+    <h3>Quote fee received</h3>
+
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Date of Payment</th>
+            <th>View receipt</th>
+        </tr>
+    </thead>
+    <tbody>
+      <%unless @quote_fees.blank?%>
+        <% @quote_fees.each do |fee| %>
+          <tr>
+            <td>
+               <%= fee.amount %>
+            </td>
+            <td>
+              paid by <%= fee.user.email %>
+            </td>
+            <td>
+              <%= fee.created_at.strftime('%B %e, %y at %l:%M %p') %>
+            </td>
+            <td>
+              <%=link_to "Receipt", quote_payment_path(fee.quote_id, fee.id) %>
+            </td>
+          </tr>
+        <%end%>
+      <%end%>
+    </tbody>
+</table>

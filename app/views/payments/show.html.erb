@@ -1,0 +1,20 @@
+<h2>RECEIPT</h2>
+
+<h3>
+  Paid by: <%= @paid_by %>
+</h3>
+
+<h3>
+  Paid to: <%= @paid_to %>
+</h3>
+
+<h3>Description</h3>
+
+<%if @payment.payment_type == "technology_fee" %>
+  Technology fee for the use of Lighthouse platform
+<%else%>
+  Payment from <%=@payment.user.email%> to <% @payment.lawyer.email %>
+<%end%><br/>
+
+ Amount: <%= @payment.amount %><br/>
+ Date: <%= @payment.created_at.strftime('%B %e, %y at %l:%M %p') %>

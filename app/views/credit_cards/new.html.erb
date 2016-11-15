@@ -1,0 +1,17 @@
+<h2>Add New Credit Card</h2>
+<%= form_tag credit_card_create_path do |f| %>
+  <div><%= label_tag :credit_card, "Credit Card Number" %><br />
+      <%= text_field_tag :credit_card, nil, :required => true %></div>
+  <div><%= label_tag :secret_code, "Security Code on Card (CVV)" %><br />
+      <%= text_field_tag :secret_code, nil, :required => true %></div><br />
+  <div><%= label_tag :expiry_year %><br />
+ <%= select_month nil, {add_month_numbers_true: true}, {name: "month_num", id: "month_num"}%>
+      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: "year_num", id: "year_num"}%>
+  </div>
+      <% if params[:client_id].nil? %>
+              <%= hidden_field_tag :lawyer_id, current_lawyer.id %>
+      <%else%>
+              <%= hidden_field_tag :user_id, current_user.id %>
+      <%end%>
+  <div><%= submit_tag "Create Credit Card" %></div>
+<% end %>

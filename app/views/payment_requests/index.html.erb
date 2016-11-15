@@ -1,0 +1,30 @@
+<h1>Payment Requests</h1>
+<% if @client_customer.blank? || @client_customer['default_source'].blank? %>
+No card defined yet. Please make a new card by clicking <%= link_to 'here', new_credit_card_path(:client_id => current_client.id) %>
+<%else%>
+You can pay using the credit card  that has the last 4 digits <%= @card['last4'] %>
+<br/>
+if you want to create a new credit card then click <%= link_to 'here', new_credit_card_path(:client_id => current_client.id) %> and make the card default once you are done
+<%end%>
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+           <th>Amount Requested</th>
+            <th>Status</th>
+             <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+     <% unless @payment_requests.blank? %>
+        <% @payment_requests.each do |payment_request| %>
+          <tr>
+              <td><%= payment_request.amount %></td>
+              <td><%= payment_request.status %></td>
+              <td><%= payment_request.description %></td>
+              <td><%= link_to 'Pay', pay_fee_to_lawyer_path(payment_request.id) unless (@client_customer.blank? || @client_customer['default_source'].blank? || payment_request.status == "paid") %></td>
+          </tr>
+        <% end %>
+      <%end%>
+    </tbody>
+</table>

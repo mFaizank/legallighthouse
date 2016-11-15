@@ -1,0 +1,7 @@
+Hello <%= @lawyer.public_name %>,
+
+You have received an consultation request with the following description:
+
+"<%= @consultation_request.description %>"
+
+Visit <%= consultation_request_url(@consultation_request) %> to review the consultation request.

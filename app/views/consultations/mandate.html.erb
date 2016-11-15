@@ -1,0 +1,20 @@
+<div class="mandate">
+  <h2>Service Agreement</h2>
+
+  <p>I hereby agree to hire <%= @inquiry.lawyer.full_name %> as legal counsel for the following mandate: Provincial Incorporation.</p>
+  <p>I further agree to the following payment structure for their legal fees:</p>
+
+  <ol>
+    <li>
+      To pay a fixed fee in the amount of $850.00.
+      <ol>
+        <li>If, for any reason, additional work is required beyond the scope of the original mandate the invoicing will be paid at an hourly rate of $100.</li>
+      </ol>
+    </li>
+    <li>Unless otherwise agreed upon, <%= @inquiry.lawyer.full_name %> may delegate the mandate in part to another lawyer or any other person within their firm at the following rate: $50.</li>
+    <li>Regardless of the payment structure invoiced, any disbursements will be charged to the client, in addition to the fixed fee package.</li>
+    <li>All taxes and the Legal Lighthouse technology fee will be paid in addition to the fixed fee package.</li>
+  </ol>
+
+  <%= button_to 'I agree', invoice_path(@inquiry), method: :get %>
+</div>

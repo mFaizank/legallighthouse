@@ -1,0 +1,24 @@
+<h2>Search results</h2>
+
+<p>Your search generated <%= @lawyers.size %> results</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Hourly consultation rate</th>
+    <th>Offers services in</th>
+    <th>Language(s)</th>
+    <th></th>
+  </tr>
+  <% @lawyers.each do |lawyer| %>
+    <tr>
+      <td><%= lawyer.public_name %></td>
+      <td><%= number_to_currency(lawyer.hourly_rate) %></td>
+      <td><%= format_specializations(lawyer.specializations) %></td>
+      <td><%= lawyer.languages.map(&:capitalize).join ', ' %></td>
+      <td><%= link_to 'View profile', lawyer_path(lawyer) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back to search', :back %>

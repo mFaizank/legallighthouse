@@ -1,0 +1,26 @@
+<h2>Lawyers</h2>
+
+<p><strong>Total listed:</strong> <%= @listed_count %><p>
+
+<table>
+  <% unless @lawyers.empty? %>
+    <tr>
+      <th>Created</th>
+      <th>Name</th>
+      <th>Profile completed</th>
+      <th>Profile listed</th>
+      <th>Profile</th>
+    </tr>
+    <% @lawyers.each do |lawyer| %>
+      <tr>
+        <td><%= lawyer.created_at.to_date.to_formatted_s(:long) %></td>
+        <td><%= lawyer.full_name %></td>
+        <td><%= lawyer.profile.complete? ? 'Yes' : 'No' %></td>
+        <td><%= lawyer.listed? ? 'Yes' : 'No' %></td>
+        <td><%= lawyer.listed? ? link_to('View', lawyer_path(lawyer)) : '' %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <p>No lawyers</p>
+  <% end %>
+</table>

@@ -1,0 +1,18 @@
+<h2>Add New Bank Account</h2>
+<%= form_tag '/bank_accounts/create', method: :post do |f| %>
+  <div><%= label_tag :account_holder_name, "Account Holder Name" %><br />
+      <%= text_field_tag :account_holder_name, nil, :required => true %></div>
+  <div><%= label_tag :routing_number, "Routing Number" %><br />
+      <%= text_field_tag :routing_number, nil, :required => true %></div><br />
+      <div><%= label_tag :account_number, "Account Number" %><br />
+      <%= text_field_tag :account_number, nil, :required => true %></div><br />
+  <div><%= label_tag :account_holder_type %><br />
+     <%= select_tag :account_holder_type, options_for_select(["Individual", "Company"]) %>
+  </div>
+      <div><%= label_tag :currency, "Currency (Three-letter ISO currency code representing the currency paid out to the bank account. )" %><br />
+      <%= text_field_tag :currency, nil, :required => true %></div><br />
+
+ <%= hidden_field_tag :lawyer_id, current_lawyer.id %>
+
+  <div><%= submit_tag "Create Bank Account" %></div>
+<% end %>

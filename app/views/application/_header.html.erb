@@ -1,0 +1,31 @@
+<header class="<%= admin_signed_in? ? 'admin' : nil %>">
+  <%= link_to root_path, class: 'logo' do %>
+    <%= image_tag 'logo.png' %>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= link_to 'Log out', destroy_user_session_path, method: 'delete' %>
+    <%= link_to 'Profile', edit_user_registration_path %>
+    <%= link_to 'Dashboard', user_consultation_requests_path %>
+    <!-- <%= link_to 'Search', lawyers_search_path %> -->
+  <% elsif lawyer_signed_in? %>
+    <span class="profile-link">
+      <%= current_lawyer.first_name %>
+      <%= image_tag(current_lawyer.avatar) %>
+    </span>
+    <div class="drop-down">
+      <%= link_to 'Edit profile', edit_profile_path %>
+      <%= link_to 'Account settings', edit_lawyer_registration_path %>
+      <%= link_to 'Log out', destroy_lawyer_session_path, method: 'delete' %>
+    </div>
+    <%= link_to 'Clients', clients_path %>
+    <%= link_to 'Dashboard', lawyer_consultation_requests_path %>
+  <% elsif admin_signed_in? %>
+    <%= link_to 'Log out', destroy_admin_session_path, method: 'delete' %>
+    <%= link_to 'Clients', admin_users_path %>
+    <%= link_to 'Lawyers', admin_lawyers_path %>
+    <%= link_to 'Applications', '/admin/applications' %>
+  <% else %>
+    <!-- <%= link_to 'Client log in', new_user_session_path %> -->
+    <!-- <%= link_to 'Client sign up', new_user_registration_path %> -->
+  <% end %>
+</header>

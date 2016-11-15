@@ -1,0 +1,13 @@
+<h2>You are about to pay for the technology fee using the following credit card</h2>
+<% if @client_customer.blank? || @client_customer['default_source'].blank? %>
+No card defined yet. Please make a new card by clicking <%= link_to 'here', new_credit_card_path(client_id: current_user.id) %>
+<%else%>
+We will charge you a technology fee of 49.99$ from your credit card  that has the last 4 digits <%= @card['last4'] %>
+<br/>
+if you want to create a new credit card then click <%= link_to 'here', new_credit_card_path(client_id: current_user.id) %> and make the card default once you are done
+  <%= form_for [@quote, @payment] do |f| %>
+    <%= submit_tag "Pay Technology Fee" %></div>
+<% end %>
+
+
+<%end%>

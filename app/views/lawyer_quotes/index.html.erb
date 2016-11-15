@@ -1,0 +1,17 @@
+<table>
+  <% if @quotes.empty? %>
+    <p>No quotes</p>
+  <% else %>
+    <% @quotes.each do |quote| %>
+      <tr>
+        <td class="inbox-time"><%= inbox_time(quote.created_at) %></td>
+        <td><%= "Quote to #{quote.user.private_name}" %></td>
+        <td><%= link_to 'View', lawyer_quote_path(quote) %></td>
+        <td><%= link_to 'Request payment', new_quote_payment_request_path(quote) %></td>
+        <% if quote.disbursement.to_i > 0 %>
+          <td><%= link_to 'Request disbursement', disbursement_quote_payment_requests_path(quote) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

@@ -1,0 +1,9 @@
+Hello <%= @consultation_request.client_name %>,
+
+<%= @consultation_request.lawyer_name %> has declined your request for a consultation.
+
+<% if @reason %>
+  The following reason was provided:
+
+  "<%= @reason %>"
+<% end %>

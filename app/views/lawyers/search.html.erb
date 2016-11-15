@@ -1,0 +1,15 @@
+<h2>Search</h2>
+
+<%= simple_form_for(@lawyer, url: lawyers_path, method: :get) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :search_individual, collection: ['Business', 'Individual'], prompt: 'Both', label: 'Business or Individual' %>
+    <%= f.input :search_specialization, collection: Specialization.all.map(&:to_s), prompt: 'All', label: 'Area of law' %>
+    <%= f.input :search_language, collection: Application.languages.map(&:capitalize), prompt: 'All', label: 'Languages' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Search" %>
+  </div>
+<% end %>

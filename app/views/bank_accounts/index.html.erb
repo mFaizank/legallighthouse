@@ -1,0 +1,35 @@
+<h1>Laywer Bank Accounts</h1>
+<%= link_to 'Add Bank Account', new_bank_account_path %>
+<table border="1" cellpadding="10">
+  <thead>
+  <tr>
+    <th>Account Holder Name</th>
+    <th>Account Holder Type</th>
+    <th>Bank Name</th>
+    <th>Last Four Digits</th>
+    <th>Default For Currency</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% unless @external_accounts.blank? %>
+    <% @external_accounts.each do |bank_account| %>
+      <tr>
+        <td><%= bank_account.account_holder_name %></td>
+        <td><%= bank_account.account_holder_type %></td>
+        <td><%= bank_account.bank_name %></td>
+        <td><%= bank_account.last4 %></td>
+        <td><%= bank_account.default_for_currency %></td>
+        <td><%= link_to 'Remove Bank Account', bank_account_delete_path(bank_account.id), data: { confirm: 'Are you certain you want to delete this?' } %></td>
+        <td>
+          <% if bank_account.default_for_currency %>
+            Default Bank Account
+          <% else %>
+            <%= link_to 'Make this Bank Account as default', update_default_bank_account_path(bank_account.id) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <%end%>
+  </tbody>
+</table>

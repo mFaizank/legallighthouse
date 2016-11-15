@@ -1,0 +1,3 @@
+Hello <%= @consultation.lawyer_name %>,
+
+None of the times slots you offered were convenient for <%= @consultation.client_name %>. You may contact <%= @consultation.client_name %> at <%= number_to_phone(@consultation.user.phone_number, area_code: true) %> to schedule a consultation.

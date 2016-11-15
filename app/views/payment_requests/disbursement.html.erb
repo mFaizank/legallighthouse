@@ -1,0 +1,8 @@
+<%= form_tag  request_disbursement_quote_payment_requests_path(@quote.id) do |f| %>
+ disbursement amount: <%= text_field_tag "payment_request[amount]", @quote.disbursement, required:true %>
+  <%= hidden_field_tag "payment_request[status]", "pending" %>
+  <%= hidden_field_tag "payment_request[quote_id]", @quote.id  %>
+  <%= hidden_field_tag "payment_request[description]", "Disbursement Requested"  %>
+  <%= hidden_field_tag "payment_request[is_disbursement]", true %>
+  <%=  submit_tag "Request Disbursement" %> 
+<%end%>

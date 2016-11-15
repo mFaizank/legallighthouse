@@ -1,0 +1,14 @@
+<div class="splash-header">
+  <div class="splash-nav">
+    <%= link_to root_path, class: 'logo mobile' do %>
+      <%= image_tag t('.logo') %>
+    <% end %>
+    <%= nav_link_to t('.how'), localized_page_path('how_it_works') %>
+    <%= nav_link_to t('.laywers'), localized_page_path('lawyers') %>
+    <%= link_to root_path, class: 'logo desktop' do %>
+      <%= image_tag t('.logo') %>
+    <% end %>
+    <%= nav_link_to t('.vision'), localized_page_path('vision') %>
+    <%= nav_link_to t('.team'), localized_page_path('team') %>
+  </div>
+</div>

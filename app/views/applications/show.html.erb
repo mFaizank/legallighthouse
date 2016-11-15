@@ -1,0 +1,17 @@
+<h2>Application details</h2>
+
+<p><strong>Name:</strong> <%= @application.full_name %></p>
+<p><strong>Bar number:</strong> <%= @application.bar_number %></p>
+<p><strong>Year of call:</strong> <%= @application.year_of_call %></p>
+<p><strong>Firm:</strong> <%= @application.firm %></p>
+<p><strong>Phone number:</strong> <%= number_to_phone(@application.phone_number, area_code: true) %></p>
+<p><strong>Email:</strong> <%= @application.email %></p>
+<p><strong>Extra credentials:</strong> <%= @application.extra_credentials %></p>
+<p><strong>CV</strong> <%= link_to 'Download', @application.cv_url %></p>
+
+<% if @application.pending? %>
+  <p><%= link_to 'Approve', approve_application_path(@application) %></p>
+  <p><%= link_to 'Reject', reject_application_path(@application) %></p>
+<% end %>
+
+<p><%= link_to 'Back to applications', '/admin/applications' %></p>

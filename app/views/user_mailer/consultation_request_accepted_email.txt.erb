@@ -1,0 +1,11 @@
+Hello <%= @consultation_request.client_name %>,
+
+<%= @consultation_request.lawyer_name %> has accepted your request for a consultation.
+
+The following time slots are available:
+
+<% @consultation_request.proposed_times.each do |proposed_time| %>
+  <%= proposed_time.time.to_formatted_s :long %>
+<% end %>
+
+Visit <%= confirm_consultation_url(@consultation_request) %> to select a time slot.

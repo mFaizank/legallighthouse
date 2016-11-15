@@ -1,0 +1,15 @@
+<h2>Quote details</h2>
+
+<p><strong>Agreement:</strong> <%= link_to 'Download', @quote.agreement_url %></p>
+<p><strong>Fee:</strong> <%= number_to_currency(@quote.fee) %></p>
+
+<% if @quote.advance %>
+  <p><strong>Advance:</strong> <%= number_to_currency(@quote.advance) %></p>
+<% end %>
+
+<p><strong>Completion:</strong> <%= @quote.completion_date.to_date.to_formatted_s(:long) %></p>
+
+<% if @quote.pending? %>
+  <p><%= link_to 'Edit', edit_lawyer_quote_path %></p>
+  <p><%= link_to 'Cancel', cancel_quote_path, method: :delete %></p>
+<% end %>

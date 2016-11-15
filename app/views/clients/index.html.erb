@@ -1,0 +1,12 @@
+<table>
+  <% if @clients.empty? %>
+    <p>No clients yet</p>
+  <% else %>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.name %></td>
+        <td><%= link_to 'View', client_path(client) %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

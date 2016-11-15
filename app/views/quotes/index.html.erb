@@ -1,0 +1,55 @@
+<table>
+  <% if @quotes.empty? %>
+    <p>No quotes</p>
+  <% else %>
+    <% @quotes.each do |quote| %>
+      <tr>
+        <td class="inbox-time"><%= inbox_time(quote.created_at) %></td>
+        <td><%= "Quote from #{quote.lawyer.public_name}" %></td>
+        <td><%= link_to 'View', quote_path(quote) %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<%= link_to "Show All Cards Info", credit_cards_path %>
+<br/>
+<%= link_to "Lawyer bank accounts", bank_accounts_path %>
+<br/>
+<%= link_to "Lawyer payment history", lawyer_history_path %>
+<br/>
+<%= link_to "Client payment history", client_history_path %>
+<br/>
+<br/>
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Agreement</th>
+            <th>Fee</th>
+            <th>Disbursement</th>
+           <th>Lawyer</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @quotes.each_with_index do |quote,index| %>
+          <tr>
+              <td><%= index+1 %></td>
+              <td><%= quote.agreement %></td>
+              <td>Total Payment: <%= quote.fee %><br/>
+              Payment done: <%= calculate_payment_done(quote.id) %>
+              <br/>
+              Payment left: <%= quote.fee - calculate_payment_done(quote.id) %>
+
+              </td>
+              <td><%= quote.disbursement %></td>
+              <td><%= quote.lawyer.email %></td>
+              <td><%= link_to 'charge lawyer technology fee', charge_flat_fee_lawyer_quote_payments_path(quote) %></td>
+              <td><%= link_to 'charge client technology fee', new_quote_payment_path(quote) %></td>
+              <td><%= link_to 'Lawyer request payment', new_quote_payment_request_path(quote) %> | <%= link_to "Request disbursement", disbursement_quote_payment_requests_path(quote) if quote.disbursement.to_i > 0 %></td>
+              <td><%= link_to "Payment requests from Lawyer", quote_payment_requests_path(quote) %></td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>

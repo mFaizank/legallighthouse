@@ -1,0 +1,32 @@
+<% content_for :profile do %>
+  <%= image_tag @consultation_request.lawyer.profile_image.url, class: 'avatar' %>
+  <p class="name"><%= @consultation_request.lawyer_name %></p>
+  <p class="title"><%= @consultation_request.lawyer.designation %></p>
+  <div class="location">
+    <%= image_tag 'pin.png' %>
+    <p><%= @consultation_request.lawyer.location %></p>
+    <%= image_tag 'medal.png' %>
+    <p><%= t('.experience', years: @consultation_request.lawyer.years_of_experience) %></p>
+  </div>
+<% end %>
+
+<% content_for :content do %>
+  <h2>Request a consultation with <%= @consultation_request.lawyer_name %></h2>
+
+  <% if @service %>
+    <p>You wish to consult with <%= @consultation_request.lawyer_name %> regarding the following service: <%= @service %><p>
+  <% end %>
+
+  <%= simple_form_for(@consultation_request, url: consultation_requests_path) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :description, as: :text, input_html: { maxlength: 500 },
+        label: "Please enter a short description of your legal needs in the box below. Your description will help #{@consultation_request.lawyer_name} to better understand your situation before they contact you to discuss the specifics", autofocus: true %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, 'Submit Request' %>
+    </div>
+  <% end %>
+<% end %>

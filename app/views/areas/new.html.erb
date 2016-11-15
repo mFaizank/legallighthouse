@@ -1,0 +1,25 @@
+<h2>Add area of law</h2>
+
+<%= link_to 'Back to services', services_path %>
+
+<%= simple_form_for @area do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, autofocus: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Add' %>
+  </div>
+<% end %>
+
+<table>
+  <% @areas.each do |area| %>
+    <tr>
+      <td><%= area.name %></td>
+      <td><%= link_to "Edit", edit_area_path(area) %></td>
+      <td><%= link_to 'Delete', area_path(area), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>

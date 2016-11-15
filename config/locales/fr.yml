@@ -1,0 +1,305 @@
+fr:
+  titles:
+    application: Droit Phare
+
+  activerecord:
+    attributes:
+      contact:
+        name: Nom
+        email: Courriel
+        subject: Sujet
+        message: Message
+      application:
+        first_name: Prénom
+        last_name: Nom
+        phone_number: Numéro de téléphone (travail)
+        email: Courriel (travail)
+      service:
+        case_specific: Prix déterminé après la première consultation
+        starting_at: À partir de
+
+  errors:
+    messages:
+      blank: champ obligatoire
+      invalid: entrée invalide
+      accepted: acceptez pour poursuivre
+      taken: a déjà été pris
+      invalid_phone: veuillez entrer un numéro de téléphone valide
+
+  simple_form:
+    error_notification:
+      contact: "S'il vous plaît examiner les problèmes ci-dessous:"
+
+  alerts:
+    contact_form: Merci! Nous serons en contact prochainement.
+    invalid_email: Cette adresse courriel n'est pas valide.
+    opening: Merci pour votre intérêt! Nous vous informerons dès qu'il y a une ouverture.​
+    contact_form: Merci! Nous serons en contact prochainement.
+
+  specializations:
+    corporate: Droit des affaires/commercial
+    labor: Droit du travail
+    intellectual: Propriété intellectuelle
+    immigration: Droit de l’immigration
+    civil: Droit civil
+    tax: Fiscalité
+    realestate: Droit immobilier
+    other: Autre(s)
+
+  bars:
+    barreau: Barreau du Québec
+    chambre: Chambre des notaires du Québec
+    upper: Barreau du Haut-Canada 
+    bc: Law Society of British Columbia
+    ab: Law Society of Alberta 
+    sk: Law Society of Saskatchewan 
+    mb: Law Society of Manitoba 
+    nb: Barreau du Nouveau Brunswick 
+    ns: Nova Scotia Barristers’ Society 
+    pe: Law Society of Prince Edward Island
+    nl: Law Society of Newfoundland and Labrador
+    yt: Law Society of Yukon
+    nt: Law Society of the Northwest Territories
+    nu: Barreau du Nunavut
+
+  lawyer_mailer:
+    application_email:
+      subject: Nous vous remercions de votre intérêt envers la présentation de vos services à travers la plateforme Droit Phare
+      body: Votre candidature est actuellement en état de vérification. Le processus de vérification des candidatures se déroule de manière consécutive. Vous aurez bientôt un courriel qui vous informera si vous avez été accepté(e). Si vous recevez une réponse positive, vous allez recevoir un lien qui vous permettra de compléter votre profil et vous aurez bientôt l’occasion de présenter vos services !
+    approval_email:
+      subject: Félicitations, votre demande a été approuvée et nous vous invitons à créer votre profil
+      body_1: Nous attendons avec impatience le processus d’acquisition des clients, et l’occasion de simplifier la pratique du droit.
+      body_2_html: "Veuillez cliquer %{here} afin de compléter votre profil et afin de présenter vos services. S’il y a quelque chose que l’on peut faire pour vous aider, n’hésitez pas à nous %{contact}."
+      body_2_text: "Veuillez visiter %{here_url} afin de compléter votre profil et afin de présenter vos services. S’il y a quelque chose que l’on peut faire pour vous aider, n’hésitez pas à nous contacter ici : %{contact_url}."
+      body_here: ici
+      body_contact: contacter
+    rejection_email:
+      subject: Nous vous remercions d’avoir posé votre candidature
+      body_1: "Cher %{name},"
+      body_2: Nous vous remercions d’avoir posé votre candidature. Après mure réflexion, nous avons le regret de vous informer que nous ne pourrons pas prendre votre candidature en considération.
+      body_3: Droit Phare reçoit de nombreuses demandes chaque mois, et nous sommes obligés d’équilibrer l’offre et la demande des services juridiques. Cette fois-ci, nous avons choisi de ne pas prendre en considération votre candidature, mais nous vous encourageons de poser votre candidature de nouveau dans l’avenir si vous vous sentez que vos qualifications ou votre expérience ont changé.
+      body_4: Nous vous souhaitons beaucoup de succès dans votre pratique du droit.
+
+  application:
+    splash_header:
+      logo: logo_fr.png
+      how: Notre plateforme
+      laywers: Pour les avocats
+      vision: Notre vision
+      team: Notre équipe
+    splash_footer:
+      terms: Conditions d’Utilisation
+      terms_path: /legale/conditions_d_utilisation
+      privacy: Politique de confidentialité
+      privacy_path: /legale/politique_de_confidentialite
+    lawyer_lead:
+      areas_application: Please enter your email address and up to five areas of practice in which you would offer fixed-fee services and we will notify you when the platform becomes available the your province(s) or territory that you selected.
+      area: Domaine de droit
+      email: Veuillez inscrire votre adresse couriel
+      email_placeholder: Courriel
+      invite: Créez votre profil!
+    privacy:
+      text: Droit Phare Inc. prend votre vie privée très au sérieux. Soyez avisé que nous ne donnons pas accès à notre liste de diffusion d'adresses courriels à des tiers.
+
+  layouts:
+    mailer:
+      sincerely: Cordialement,
+      legal_lighthouse: L’équipe Droit Phare
+
+  pages:
+    home:
+      title_html: "L’avocat qu’il vous faut <br>au juste tarif."
+      subtitle: Services juridiques offerts à tarifs fixes sans frais cachés.
+      action: Trouvez un avocat!
+      packages: Exemples de forfaits et de services juridiques offerts à tarifs fixes
+      package_1:
+        title: Vous incorporez votre entreprise au niveau provincial?
+        subtitle: Préparez-vous à devenir votre propre patron
+        price: Pour aussi peu que $950 + taxes
+      package_2:
+        title: Vous allez à la cour des petites créances?
+        subtitle: Assurez-vous d’être bien préparé
+        price: Pour aussi peu que $600 + taxes
+      package_3:
+        title: Vous démarrez votre entreprise en ligne?
+        subtitle: Rédigez vos conditions de services et votre politique de confidentialité
+        price: Pour aussi peu que $1050 + taxes
+      package_4:
+        title: Vous souhaitez protéger votre marque de commerce?
+        subtitle: Mettez toutes les chances de votre côté et enregistrez votre marque de commerce dès aujourd’hui.
+        price: Pour aussi peu que $1000 + taxes
+      featured: Nos avocats
+      profile_1:
+        title: Avocate Principale
+        experience: 11 ans d’expérience
+      profile_2:
+        title: Avocat Principal
+        experience: 12 ans d’expérience
+      profile_3:
+        title: Avocat Fiscaliste
+        experience: 5 ans d’expérience
+      profile_4:
+        title: Avocate Propriété Intellectuelle
+        experience: 7 ans d’expérience
+      testimony:
+        text_html: "&#171;En facilitant l'accès aux services juridiques à Tarifs Fixes et en permettant aux avocats de travailler à des heures flexibles, Droit Phare génère un vecteur de changement majeur et excitant pour un accès abordable à la justice.&#187;"
+        by: Richard Janda, professeur en droit des affaires, Université McGill
+      interested: Intéressé?
+      email: Droit Phare est en phase finale de recrutement et le lancement de sa plateforme est imminent. Entrez votre adresse courriel ci-dessous pour recevoir l’annonce du lancement officiel de notre plateforme et soyez parmi les premiers à l’utiliser - pour trouver le bon avocat au tarif juste.
+      individual: Je suis un particulier
+      business: Je représente une entreprise ou une organisation
+      email_placeholder: Courriel
+      notify: Soumettre
+
+    how_it_works:
+      section_1:
+        title: Accédez facilement au bon avocat
+        items:
+          - Consultez les profils d’avocats d’expérience.
+          - Trouvez le bon avocat selon vos besoins spécifiques.
+          - Recevez une évaluation gratuite de vos besoins juridiques.
+      section_2:
+        title: Embauchez un avocat à un juste prix
+        items:
+          - Payez un prix compétitif à tarif fixe, sans frais cachés.
+          - Réduisez votre facture en payant moins de frais administratifs.
+
+      section_3:
+        title: Accélérez votre dossier grâce à notre plateforme numérique
+        items:
+          - Consultez électroniquement l’offre de service.
+          - Après l'acceptation de l’offre, l’avocat peut entamer le travail rapidement.
+          - Payez en ligne par carte de crédit en toute sécurité.
+
+    lawyers:
+      title_html: "Créez un profil en ligne <br>afin d’attirer de nouveaux clients."
+      subtitle: Pratiquez le droit de façon plus efficace et transparente; privilégiez le paiement en ligne.
+      action: Faites croître votre clientèle!
+      benefits: Les avantages de notre plateforme numérique
+      section_1:
+        title_html: "Paiements en ligne sécurisés<br>et mandats à frais fixes"
+        items:
+          - Paiements en ligne sécurisés, rapides et fiables, envoyés directement à votre compte d’opérations.
+          - "Les mandats à frais fixes augmentent:"
+        subitems:
+          - L’assurance des clients que le prix payé est équitable;
+          - La prévisibilité de la liquidité d’entreprise disponible;
+          - Le taux de fidélisation de la clientèle.
+      section_2:
+        title_html: "Plateforme plus efficace<br>que l'approche traditionnelle"
+        subtitle_1: "Notre approche et les algorithmes numériques permettent de:"
+        items:
+          - Réduire le nombre d'interactions avec les clients;
+          - Réduire les frais généraux;
+          - Diminuer le temps consacré à l’administration d’un dossier;
+        subtitle_2: ce qui vous permettra d'offrir des prix plus avantageux.
+      section_3:
+        title_html: "Travail flexible"
+        items:
+          - Choisissez votre nombre de clients selon votre disponibilité et votre horaire
+          - Travaillez de la maison et restez en contact avec vos clients, où que vous soyiez
+          - Gérez facilement les paiements-clients reçus en ligne
+      sample: Exemple de profil
+      screenshot: screenshot_fr.jpg
+      interested: Joignez-vous à nous
+      recruitment: Droit Phare est en phase finale de recrutement d’avocats pour son lancement officiel.
+      create: Créez votre profil en ligne en affichant vos champs d’expertise, vos services à frais fixes, et votre taux horaire  pour une consultation. Nous vous contacterons avec nos Conditions d'utilisation et une invitation à finaliser votre profil lorsque les candidats seront examinés.
+      apply: Soumettre votre candidature
+
+    team:
+      advisory_board:
+        title: Conseil consultatif
+        hinton:
+          title: Directeur, Projets spéciaux
+          bio_html: "<a href=\"https://www.linkedin.com/in/deborahhinton\">Hinto and co.</a>"
+        janda:
+          title_html: Professeur en droit<br>des affaires
+          bio_html: "<a href=\"https://www.mcgill.ca/law/about/profs/janda-richard\">Université McGill</a>"
+        blundon:
+          title: Responsable des comptes
+          bio_html: "<a href=\"https://ca.linkedin.com/in/michaelblundon\">LinkedIn</a>"
+        reynaud:
+          title: Avocat fiscaliste
+          bio_html: "<a href=\"https://ca.linkedin.com/in/patrick-reynaud-594b7165\">Torys LLP</a>"
+      founders: Fondateurs de Droit Phare
+      danielle:
+        title: Présidente
+        bio_html: "Avocate bilingue avec quatre années d’expérience, <a href=\"https://ca.linkedin.com/in/danielle-linnen-2574861b\">Danielle</a> s’est impliquée dans plusieurs causes touchant à la justice sociale, à l’environnement et au droit des Autochtones. Après avoir travaillé sur la Convention sur la diversité biologique au sein des Nations Unies, elle s’est tournée vers la pratique légale en droit autochtone, commercial et constitutionnel. Danielle détient un Juris Doctorat, un baccalauréat en droit ainsi qu’un baccalauréat spécialisé en développement international."
+      jameson:
+        title: VP, Développement de produits
+        bio_html: "<a href=\"http://ca.linkedin.com/in/jamesonjonesdoyle\">Jameson</a> est coach d’entreprises en démarrage et offre des services de consultation en innovation stratégique, en démarrage d’entreprise et en gestion financière. Il a travaillé au Centre de droit international du développement durable (CDIDD) et à la Convention sur la diversité biologique des Nations Unies, à l’Université McGill et a participé au démarrage de plusieurs start-up et d’organismes sans but lucratif. Détenteur d’une maîtrise en marketing et d’un B.A. en psychologie, Jameson a été nommé étudiant de l’année s’étant le plus démarqué de l’Université Concordia. Il faisait aussi partie des trois personnalités québécoises de l’année aux cycles d’études supérieures."
+      mike:
+        title: VP, Ingénieur en chef
+        bio_html: "Ingénieur des logiciels, <a href=\"https://ca.linkedin.com/in/mikhail-chliakhovski-6a9b9b65\">Mike</a> cumule plusieurs années d’expérience dans le développement d'applications web et iOS et souhaite mettre à profit ses compétences en innovation technologique au service du bien commun. Il a travaillé au CDIDD, au Centre canadien pour la justice internationale et chez TPS Software. Il agit présentement à titre d’ingénieur senior pour le développement d’entreprises émergentes chez Match Group. Mike a obtenu, avec distinction, un baccalauréat en informatique de l’Université Concordia."
+
+    vision:
+      text_html: |
+        <h3>Notre mission chez droit phare</h3>
+        <p>Faire affaire avec un avocat est souvent stressant, surtout lorsqu’on ne sait pas combien coûteront ses services.</p>
+        <p>Imaginez être assis à la table d’un restaurant réputé. Vous consultez la carte des repas qui n’affiche aucun prix. Ne sachant pas à combien s’élèvera la facture, parions que ce manque d’information risque de nuire à votre expérience culinaire  et ce, malgré la qualité du service ou du repas offert. Les surprises financières au restaurant sont frustrantes, mais peuvent être désastreuses lorsqu’on fait affaire avec un avocat. Grâce à Droit Phare, vous aurez accès aux services d’avocats en toute transparence et en pleine connaissance des coûts. Finies les surprises!</p>
+        <h3>Comment pouvons-nous vous aider?</h3>
+        <p>Le recours aux services d’un avocat devient tôt ou tard indispensable pour plusieurs.</p>
+        <p>Certaines personnes ont été congédiés injustement. D’autres ont perdu la garde de leurs enfants sans motif raisonnable. Des conjoints de fait désirant officialiser leur union ont besoin d’un contrat de vie commune. Des entrepreneurs qui démarrent leur entreprise cherchent à établir un cadre légal rigoureux, alors que des entreprises déjà établies souhaitent réviser un contrat d’emploi.</p>
+        <p>Les avocats sont appelés à offrir l’aide légale nécessaire pour un large éventail d’enjeux. Or, les gens préfèrent souvent ne pas engager d’avocat en raison des frais de service élevés.  C’est pourquoi Droit Phare a mis sur pied une plateforme permettant à tous d’avoir accès au bon avocat, à bon prix.</p>
+        <h3>Des économies pour l’avocat et pour le client</h3>
+        <p>Sans doute vous demandez-vous ce qui incite les avocats à se joindre à la plateforme de Droit Phare. Malgré la mauvaise réputation souvent associée à la profession juridique, la pratique légale peut être coûteuse pour l’avocat. Pensons seulement aux frais de location d’un bureau au centre-ville ou aux frais administratifs. La plateforme de Droit Phare permet aux avocats d’interagir avec leurs clients sans avoir besoin d’assumer ces dépenses. Par conséquent, l’avocat bénéficie d'une réduction de frais, ce qui se traduit par des tarifs moins élevés pour les services juridiques  qui vous sont offerts.</p>
+      statement: La vie peut être stressante, mais chez Droit Phare nous croyons que l'accès aux solutions légales de qualité supérieur ne doivent pas l'être. Bienvenue à notre plateforme; nous vous souhaitons une heureuse expérience!
+
+  applications:
+    new:
+      title: Formulaire de candidature
+      law_society: De quel Barreau canadien êtes-vous membre?
+      other_bars: Droit Phare offre actuellement ses services seulement au Québec. Veuillez soumettre votre application en fournissant les informations ci-dessous et Droit Phare vous informera lorsque nos services seront disponibles ailleurs au Canada.
+      bar_info: Votre numéro de Barreau nous permet de valider que vous y êtes inscrits à titre de membre et que vous disposez du droit d'exercer la profession d'avocat. Votre numéro de Barreau sera maintenu confidentiel en vertu de nos conditions d'utilisation et de notre Politique de confidentialité.
+      no_qc: Veuillez inscrire votre adresse courriel et indiquez un maximum de cinq domaines de droit dans lesquels vous souhaitez offrir des services. Nous vous informerons lorsque la plateforme sera disponible dans votre province ou territoire.
+      bar_number: Numéro de membre (7 chiffres)
+      year_of_call: Année d’inscription au Tableau de l’Ordre du Barreau du Québec
+      firm_name: Nom de cabinet
+      areas: Quels sont vos domaines de droit dans lesquels vous offrirez des services juridiques ?
+      languages: Quelle(s) langue(s) acceptez-vous d’employer dans vos fonctions à titre d’avocat ?
+      remove: Supprimer
+      add: Ajouter
+      good_standing: Êtes-vous membre en règle du Barreau du Québec ?
+      malpractice: Êtes-vous titulaire d’une police d’assurance responsabilité professionnelle ?
+      credentials: Avez-vous d’autres qualifications pertinentes dont vous aimeriez nous faire part ?
+      cv: Veuillez télécharger votre cv
+      agree: "Veuillez lire et accepter les termes suivants :"
+      values:
+        - Faire preuve de transparence dans les services offerts et répondre aux questions des clients par rapport à la facturation
+        - Employer un langage clair et compréhensible lors de vos communications avec le client
+        - Se soumettre aux exigences déontologiques du Barreau du Québec et assurer la confidentialité de vos dossiers-clients
+        - Offrir des taux justes qui reflètent votre niveau d’expérience ainsi que les économies réalisées en utilisant la plateforme de Droit Phare
+        - Être disponible pour une entrevue téléphonique au besoin avec l’un de nos représentants chez Droit Phare
+      check_here: Cochez ici pour indiquer que vous avec lu et que vous acceptez les conditions d’utilisation et la Politique de confidentialité de Droit Phare
+      next: Suivant
+      previous: Précédent
+      apply: Soumettre
+    create:
+      thank_you: Droit Phare vous a envoyé un courriel pour finaliser votre inscription. Merci pour votre intérêt!
+
+  lawyers:
+    show:
+      evaluation: Planifier une évaluation gratuite
+      title: Avocate sénior
+      location: Montréal, Québec
+      experience: 11 ans d’expérience
+      bio: Bio
+      bio_text_html: |
+        <p>Admise au Barreau du Québec en 2001, Natalie est avocate sénior, spécialisée en droit du travail et de l’emploi depuis plus de dix ans. Elle accompagne notamment les PME dans la rédaction de contrats d’emploi et dans l’élaboration de politiques en ressources humaines. Elle offre aussi des conseils en matière de préavis, d’indemnités de départ, d’arbitrage de grief et d’application des lois du travail.</p>
+        <p>À ce titre, Natalie a assisté divers employeurs devant les instances gouvernementales (ex: Commission des normes du travail, Commission des droits de la personne). Natalie se souscrit à la mission de Droit Phare en offrant des prix à frais fixes pour des mandats clairs tels que la révision d’un contrat ou une consultation sur l’élaboration de politiques. Pour les mandats plus compliqués, tel qu’un arbitrage, ses services peuvent être retenus à un taux horaire.</p>
+      consulation: Consultation d'une heure
+
+  leads:
+    create:
+      success: Merci pour votre intérêt! Nous serons en contact bientôt.
+      failure: Le courriel que vous avez entré est invalide.
+
+  lawyer_leads:
+    create:
+      success: Merci pour votre intérêt! Nous vous informerons dès qu'il y a une ouverture.​
+      failure: Le courriel que vous avez entré est invalide.
+
+  contacts:
+    new:
+      title: Nous joindre
+      submit: Soumettre

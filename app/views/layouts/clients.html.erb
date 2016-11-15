@@ -1,0 +1,12 @@
+<% content_for :content do %>
+  <div class="container">
+    <h2>Clients</h2>
+    <ul class="navigation">
+      <li><%= link_to_unless_current 'All', clients_path %></li>
+      <li><%= link_to_unless_current 'Potential', clients_path(status: 'pending') %></li>
+      <li><%= link_to_unless_current 'Active', clients_path(status: 'active') %></li>
+    </ul>
+    <div class="items"><%= yield %></div>
+  </div>
+<% end %>
+<%= render template: "layouts/application" %>

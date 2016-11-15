@@ -1,0 +1,93 @@
+<% content_for :profile do %>
+  <%= image_tag @lawyer.profile_image.url, class: 'avatar' %>
+  <% unless current_user && current_user.client_of?(@lawyer) %>
+    <!-- <div class="eval_pull">Not sure what you need?</div> -->
+    <%= button_to t('.evaluation'), new_consultation_request_path(@lawyer), method: :get %></p>
+  <% end %>
+  <p class="name"><%= @lawyer.public_name %></p>
+  <p class="title"><%= @lawyer.designation %></p>
+  <div class="location">
+    <%= image_tag 'pin.png' %>
+    <p><%= @lawyer.location %></p>
+    <%= image_tag 'medal.png' %>
+    <p><%= t('.experience', years: @lawyer.years_of_experience) %></p>
+  </div>
+<% end %>
+
+<% content_for :content do %>
+  <div class="bio">
+    <h2><%= t '.bio' %></h2>
+    <%= simple_format(@lawyer.bio) %>
+    <% if @lawyer.services.any? %>
+      <br>
+      <h2 class="services">Services</h2>
+      <% if @lawyer.consultation_hourly_rate %>
+        <table class="consultation">
+          <colgroup>
+            <col width="40%">
+            <col width="100%">
+            <col width="20%">
+          </colgroup>
+          <tr>
+            <td><strong><%= t '.consulation' %></strong></td>
+            <td>
+              <div class="short"></div>
+              <div class="long"></div>
+            </td>
+            <td>
+              <%= button_to(format_price(@lawyer.consultation_hourly_rate),
+                new_consultation_request_path(@lawyer), method: :get) %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+      <ul class="accordion-tabs-minimal">
+        <% @lawyer.areas.each do |area| %>
+          <li class="tab-header-and-content">
+            <a href="#" class="tab-link"><%= area.name.capitalize %></a>
+            <div class="tab-content">
+              <table>
+                <% @lawyer.services.where(specialization: area.name).each do |service| %>
+                  <colgroup>
+                    <col width="20%">
+                    <col width="60%">
+                    <col width="40%">
+                    <col width="10%">
+                  </colgroup>
+                  <tr>
+                    <td><strong class="service"><%= service.name %></strong></td>
+                    <td>
+                      <div class="short">
+                        <%= truncate(service.description, length: 100, separator: ' ' ) do %>
+                          <%= link_to 'More', '#', class: 'more' %>
+                        <% end %>
+                      </div>
+                      <div class="long">
+                        <%= "#{service.description} " %>
+                        <%= link_to 'Less', '#', class: 'more' %>
+                      </div>
+                    </td>
+                    <td>
+                      <% if service.fixed_fee %>
+                        <% if service.starting_at %>
+                          Starting at<br><%= format_price(service.fixed_fee) %>
+                        <% else %>
+                          <%= format_price(service.fixed_fee) %>
+                        <% end %>
+                      <% elsif service.case_specific %>
+                        Case specific
+                      <% end %>
+                    </td>
+                    <td>
+                      <%= button_to 'Select', new_consultation_request_path(@lawyer), method: :get, class: 'select' %></p>
+                    </td>
+                  </tr>
+                <% end %>
+              </table>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+<% end %>

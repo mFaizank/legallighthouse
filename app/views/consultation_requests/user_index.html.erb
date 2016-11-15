@@ -1,0 +1,13 @@
+<table>
+  <% if @consultation_requests.empty? %>
+    <p>No consultation requests</p>
+  <% else %>
+    <% @consultation_requests.each do |consultation_request| %>
+      <tr>
+        <td class="inbox-time"><%= inbox_time(consultation_request.created_at) %></td>
+        <td><%= "Pending consultation request to #{consultation_request.lawyer_name}" %></td>
+        <td><%= link_to 'Cancel', cancel_consultation_request_path(consultation_request), method: :put %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

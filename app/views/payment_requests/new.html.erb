@@ -1,0 +1,7 @@
+<%= form_for [@quote, @payment_request] do |f| %>
+ amount: <%= f.text_field :amount, :required => true %>
+ description: <%= f.text_field :description, :required => true %>
+ <%= f.hidden_field :status, :value => "pending" %>
+ <%= f.hidden_field :quote_id, :value => @quote.id  %>
+ <%= f.submit "Request Payment" %> 
+<%end%>

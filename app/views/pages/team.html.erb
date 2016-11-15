@@ -1,0 +1,77 @@
+<% content_for :home do %>
+  <div class="splash team">
+    <%= render 'splash_header' %>
+    <div class="team_title">
+    <h2><%= t '.advisory_board.title' %></h2>
+    </div>
+      <div class="founder_spacing">
+        <div class="featured">
+          <div class="featured-container">
+            <div>
+              <%= image_tag 'd_hinton.jpg' %>
+              <p class="name">Deborah Hinton</p>
+              <p><%= t '.advisory_board.hinton.title' %></p>
+              <p><%= t '.advisory_board.hinton.bio_html' %></p>
+            </div>
+            <div>
+              <%= image_tag 'r_janda.jpg' %>
+              <p class="name">Richard Janda</p>
+              <p><%= t '.advisory_board.janda.title_html' %></p>
+              <p><%= t '.advisory_board.janda.bio_html' %></p>
+            </div>
+            <div>
+              <%= image_tag 'm_blundon.jpg' %>
+              <p class="name">Michael Blundon</p>
+              <p><%= t '.advisory_board.blundon.title' %></p>
+              <p><%= t '.advisory_board.blundon.bio_html' %></p>
+            </div>
+            <div>
+              <%= image_tag 'p_reynaud.jpg' %>
+              <p class="name">Patrick Reyanud</p>
+              <p><%= t '.advisory_board.reynaud.title' %></p>
+              <p><%= t '.advisory_board.reynaud.bio_html' %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="team_title">
+    <h2><%= t '.founders' %></h2>
+  </div>
+    <div class="team-container">
+      <div class="row">
+        <h3>Danielle Linnen</h3>
+        <span> • </span>
+        <p class="title"><%= t '.danielle.title' %></p>
+      </div>
+      <div class="row">
+        <div><%= image_tag 'danielle.jpg' %></div>
+        <div>
+          <p><%= t '.danielle.bio_html' %></p>
+        </div>
+      </div>
+      <div class="row">
+        <h3>Jameson Jones-Doyle</h3>
+        <span> • </span>
+        <p class="title"><%= t '.jameson.title' %></p>
+      </div>
+      <div class="row">
+        <div><%= image_tag 'jameson.jpg' %></div>
+        <div>
+          <p><%= t '.jameson.bio_html' %></p>
+        </div>
+      </div>
+      <div class="row">
+        <h3>Mike Chliakhovski</h3>
+        <span> • </span>
+        <p class="title"><%= t '.mike.title' %></p>
+      </div>
+      <div class="row">
+        <div><%= image_tag 'mike.jpg' %></div>
+        <div>
+          <p><%= t '.mike.bio_html' %></p>
+        </div>
+      </div>
+    </div>
+    <%= render 'splash_footer' %>
+  </div>
+<% end %>

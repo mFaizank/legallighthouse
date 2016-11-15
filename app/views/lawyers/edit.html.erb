@@ -1,0 +1,30 @@
+<%= simple_form_for @lawyer, url: profile_path, html: { method: :put } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <% unless @lawyer.profile.complete? %>
+      <p class="info-box alert">All fields on this page are required, including your profile picture as well as at least one area of law / service.<br><br>Your profile is currently not publicly listed because some required fields are empty.</p>
+    <% end %>
+    <%= f.label 'Profile image' %>
+    <% if url = @lawyer.profile_image.url %>
+      <%= image_tag(url, class: 'avatar edit') %>
+    <% end %>
+    <%= f.input :profile_image, as: :file, label: false %>
+    <%= f.input :profile_image_cache, as: :hidden %>
+    <%= f.input :designation, placeholder: 'E.g. Senior Attorney' %>
+    <%= f.input :location %>
+    <%= f.input :years_of_experience,
+      label: 'Years of exeprience as a lawyer' %>
+    <%= f.input :bio %>
+    <%= f.input :consultation_hourly_rate, label: 'Hourly consultation rate' %>
+    <%= f.input :public_id, label: 'Public id' %>
+    <% if @lawyer.listed? %>
+      <% public_path = I18n.locale == :en ? public_lawyer_url(@lawyer.public_id) : avocat_publique_url(@lawyer.public_id) %>
+      <p><%= link_to "#{public_path}", public_path, target: '_blank' %></p>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save" %>
+  </div>
+<% end %>

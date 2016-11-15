@@ -1,0 +1,7 @@
+<h2>Decline consultation request</h2>
+
+<p>Optionally, provide a reason for declining the request<p>
+<%= form_tag(decline_consultation_request_path(@consultation_request), method: :put) do %>
+  <%= text_area_tag 'reason' %>
+  <%= submit_tag 'Decline' %>
+<% end %>

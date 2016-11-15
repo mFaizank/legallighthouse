@@ -1,0 +1,90 @@
+<% content_for :home do %>
+  <%= render 'flashes' %>
+  <div class="splash">
+    <%= render 'splash_header' %>
+    <div class="call-to-action">
+      <div class="splash-slogan"><%= t '.title_html' %></div>
+      <div class="splash-sub"><%= t '.subtitle' %></div>
+      <%= button_to t('.action'), '#action', method: :get %>
+    </div>
+    <div class="examples">
+      <h2><%= t '.packages' %></h2>
+      <div class="examples-container">
+        <div class="row">
+          <div>
+            <p><%= t '.package_1.title' %></p>
+            <p><%= t '.package_1.subtitle' %></p>
+            <p><%= t '.package_1.price' %></p>
+          </div>
+          <div>
+            <p><%= t '.package_2.title' %></p>
+            <p><%= t '.package_2.subtitle' %></p>
+            <p><%= t '.package_2.price' %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <p><%= t '.package_3.title' %></p>
+            <p><%= t '.package_3.subtitle' %></p>
+            <p><%= t '.package_3.price' %></p>
+          </div>
+          <div>
+            <p><%= t '.package_4.title' %></p>
+            <p><%= t '.package_4.subtitle' %></p>
+            <p><%= t '.package_4.price' %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="featured">
+      <h2><%= t '.featured' %></h2>
+      <div class="featured-container">
+        <div>
+          <%= image_tag 'profile1.jpg' %>
+          <p class="name">Natalie J.</p>
+          <p><%= t '.profile_1.title' %></p>
+          <p><%= t '.profile_1.experience' %></p>
+        </div>
+        <div>
+          <%= image_tag 'profile2.jpg' %>
+          <p class="name">Sushil G.</p>
+          <p><%= t '.profile_2.title' %></p>
+          <p><%= t '.profile_2.experience' %></p>
+        </div>
+        <div>
+          <%= image_tag 'profile3.jpg' %>
+          <p class="name">Patrick R.</p>
+          <p><%= t '.profile_3.title' %></p>
+          <p><%= t '.profile_3.experience' %></p>
+        </div>
+        <div>
+          <%= image_tag 'profile4.jpg' %>
+          <p class="name">Audrey M.</p>
+          <p><%= t '.profile_4.title' %></p>
+          <p><%= t '.profile_4.experience' %></p>
+        </div>
+      </div>
+    </div>
+    <div class="testimony">
+      <%= t '.testimony.text_html' %>
+      <div><%= t '.testimony.by' %></div>
+    </div>
+    <div class="action">
+      <a name="action"></a>
+      <div class="action-container">
+        <h2><%= t '.interested' %></h2>
+        <p><%= t '.email' %></p>
+        <%= form_tag(leads_path) do %>
+          <input type="radio" name="seeking" value="individual" checked> <%= t '.individual' %><br>
+          <input type="radio" name="seeking" value="business"> <%= t '.business' %><br>
+          <div class="email home">
+            <input type="email" name="email" placeholder="<%= t '.email_placeholder' %>">
+            <button type="submit"><%= t '.notify' %></button>
+          </div>
+        <% end %>
+      </div>
+      <%= render 'privacy' %>
+    </div>
+    <%= render 'splash_footer' %>
+  </div>
+<% end %>

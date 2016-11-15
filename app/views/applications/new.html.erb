@@ -1,0 +1,77 @@
+<h2><%= t '.title' %></h2>
+
+<%= simple_form_for @application, validate: true do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <section>
+      <%= f.input :first_name, autofocus: true %>
+      <%= f.input :last_name %>
+      <div class="checkboxes">
+        <%= t '.law_society' %>
+        <%= f.collection_check_boxes :bars, Bar.all, :name, :to_s %>
+      </div>
+    </section>
+    <section>
+      <p class="other-bars info-box notice"><%= t '.other_bars' %></p>
+      <%= f.input :bar_number, label: t('.bar_number') %>
+      <p class="bar-info info-box notice"><%= t '.bar_info' %></p>
+      <%= f.input :year_of_call, collection: Application.years_of_call,
+        label: t('.year_of_call') %>
+      <%= f.input :firm, label: t('.firm_name') %>
+      <%= f.input :phone_number %>
+      <%= f.input :email %>
+      <div class="checkboxes">
+        <%= f.label t('.areas') %>
+        <%= f.collection_check_boxes :specializations, Specialization.all, :name, :to_s %>
+        <a class="add-specialization" href="#">Add</a>
+      </div>
+      <div class="checkboxes">
+        <%= f.label t('.languages') %>
+        <%= f.collection_check_boxes :languages, Language.default, :first, :second %>
+        <div class="languages">
+          <div>
+            <%= select_tag :languages_select, options_from_collection_for_select(Language.all, :name, :to_s) %>
+            <a class="remove-language" href="#"><%= t '.remove' %></a>
+          </div>
+        </div>
+        <a class="add-language" href="#"><%= t '.add' %></a>
+      </div>
+      <%= f.input :good_standing, as: :radio_buttons,
+        label: t('.good_standing') %>
+      <%= f.input :malpractice_insurance, as: :radio_buttons,
+        label: t('.malpractice') %>
+      <%= f.input :extra_credentials, as: :text,
+        label: t('.credentials') %>
+      <%= f.input :cv, as: :file, label: t('.cv') %>
+      <%= f.input :cv_cache, as: :hidden %>
+      <%= f.input :agree, as: :radio_buttons,
+        label: t('.agree') %>
+      <ul class="values">
+        <% t('.values').each do |value| %>
+          <li><%= value %></li>
+        <% end %>
+      </ul>
+      <%= f.input :terms, as: :boolean, checked_value: true, unchecked_value: false,
+        label: t('.check_here') %>
+    </section>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, t('.next'), class: 'next' %>
+    <%= f.button :submit, t('.previous'), class: 'previous' %>
+    <%= f.button :submit, t('.apply'), class: 'apply' %>
+  </div>
+<% end %>
+
+<div class="no-qc">
+  <div class="action">
+    <div class="action-container">
+      <%= render 'lawyer_lead', page: 'application' %>
+    </div>
+    <%= render 'privacy' %>
+  </div>
+</div>
+
+<%= tag 'span', class: 'variables',
+  data: { invalid: @invalid, areas: @areas, languages: @languages } %>

@@ -1,0 +1,7 @@
+<footer>
+  &copy; <%= Time.now.year %> <%= title %> Inc.
+  <div class="language"><%= language_link %></div>
+  <div class="language"><%= link_to t('contacts.new.title'), contact_path %></div>
+  <div class="language"><%= link_to t('.privacy'), "#{t '.privacy_path'}", target: '_blank' %></div>
+  <div class="language"><%= link_to t('.terms'), "#{t '.terms_path'}", target: '_blank' %></div>
+</footer>
